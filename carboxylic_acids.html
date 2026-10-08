@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Smart · Carboxylic Acids and their Derivatives</title>
+<style>
+:root{color-scheme:light;--bg:#faf7fb;--card:#fff;--ink:#241a2e;--mut:#6b6275;--p:#5b2a86;--s:#d6336c;--ln:#e4dcea;--ok:#1f8a4c;--bad:#c0392b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:28px 18px 8px;max-width:960px;margin:auto}
+h1{font:700 clamp(2rem,6vw,3.2rem)/1 Georgia,serif;margin:0;color:var(--p);letter-spacing:-.02em}
+header p{margin:6px 0 0;color:var(--mut)}
+nav{display:flex;gap:6px;overflow-x:auto;max-width:960px;margin:14px auto;padding:0 18px}
+nav button{flex:none;border:1.5px solid var(--ln);background:var(--card);color:var(--ink);padding:9px 15px;border-radius:99px;font:600 .9rem inherit;cursor:pointer}
+nav button[aria-selected=true]{background:var(--p);border-color:var(--p);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid var(--s);outline-offset:2px}
+main{max-width:960px;margin:auto;padding:0 18px 30px}
+section{display:none}section.on{display:block}
+h2{font:700 1.5rem Georgia,serif;margin:8px 0 12px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px;margin-bottom:12px}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.grid .card{margin:0;border-left:5px solid var(--s)}
+.grid b{color:var(--p)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{border:1.5px solid var(--ln);background:var(--card);color:var(--ink);border-radius:99px;padding:5px 12px;cursor:pointer;font:.85rem inherit}
+.chip.on{background:var(--s);border-color:var(--s);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+.sc{overflow-x:auto}
+td,th{padding:9px 8px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}
+th{color:var(--p)}
+td:first-child{font-weight:700;white-space:nowrap}
+.tree{display:flex;flex-direction:column;align-items:center;gap:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.node{border:2px solid var(--p);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:10px;cursor:pointer;font:600 .95rem inherit}
+.node.on{background:var(--p);color:#fff}
+.note{background:var(--bg);border:1px dashed var(--p);border-radius:10px;padding:12px;margin-top:10px;min-height:48px}
+.tl{display:flex;overflow-x:auto;gap:0;padding:10px 0;border-top:3px solid var(--p);margin-top:10px}
+.tl button{flex:1 0 130px;background:none;border:0;color:var(--ink);cursor:pointer;padding:12px 6px 0;position:relative;font:.85rem inherit}
+.tl button:before{content:"";position:absolute;top:-17px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--s);border:3px solid var(--bg)}
+.tl button.on{font-weight:700;color:var(--p)}
+.steps{display:flex;gap:6px;flex-wrap:wrap}
+.steps button{flex:1 0 130px;padding:12px;border:2px solid var(--ln);background:var(--card);color:var(--ink);cursor:pointer;border-radius:10px;font:inherit}
+.steps button.on{border-color:var(--s);background:var(--s);color:#fff}
+.map{display:grid;grid-template-columns:240px 1fr;gap:14px}
+.list{max-height:60vh;overflow:auto;display:flex;flex-direction:column;gap:3px}
+.list h4{margin:10px 0 2px;color:var(--p);font-size:.85rem}
+.list button{text-align:left;border:0;background:none;color:var(--ink);padding:6px 8px;border-radius:7px;cursor:pointer;font:.92rem inherit}
+.list button.on{background:var(--p);color:#fff}
+.view{position:sticky;top:8px;align-self:start;min-height:140px}
+.view h3{margin:0 0 6px;color:var(--s);font:700 1.3rem Georgia,serif}
+@media(max-width:640px){.map{grid-template-columns:1fr}.view{order:-1}.list{max-height:34vh}}
+.fc{perspective:900px;height:220px;cursor:pointer;margin:10px 0}
+.fi{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.f .fi{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:1.15rem;overflow:auto}
+.fa{background:var(--p);color:#fff;font:700 1.4rem Georgia,serif}
+.fb{background:var(--card);border:2px solid var(--s);transform:rotateY(180deg)}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:0;background:var(--p);color:#fff;padding:10px 18px;border-radius:10px;font:600 .95rem inherit;cursor:pointer}
+.btn.g{background:var(--card);color:var(--ink);border:1.5px solid var(--ln)}
+.opt{display:block;width:100%;text-align:left;margin:7px 0;padding:11px 14px;border:1.5px solid var(--ln);border-radius:10px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--card))}
+.opt.no{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 18%,var(--card))}
+.prog{height:6px;background:var(--ln);border-radius:9px;overflow:hidden;margin-bottom:10px}.prog i{display:block;height:100%;background:var(--s);width:0;transition:width .3s}
+input[type=search]{width:100%;padding:10px 12px;border:1.5px solid var(--ln);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+footer{text-align:center;color:var(--mut);padding:20px;font-size:.85rem;border-top:1px solid var(--ln);max-width:960px;margin:auto}
+@media(prefers-reduced-motion:reduce){.fi{transition:none}}
+.mmbar{display:flex;gap:6px;margin-bottom:8px}.mm ul{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--ln)}.mm>ul{padding-left:0;border:0}.mm li{margin:4px 0}.mm .nb{display:flex;align-items:center;gap:8px;width:100%;text-align:left;border:1.5px solid var(--ln);background:var(--card);color:var(--ink);border-radius:9px;padding:7px 10px;font:600 .93rem inherit;cursor:pointer}.mm .nb.p{border-color:var(--p)}.mm .nb .ar{flex:none;width:1em;color:var(--s);transition:transform .15s}.mm li.open>.nb .ar{transform:rotate(90deg)}.mm .l1>.nb{background:var(--p);color:#fff;border-color:var(--p)}.mm .l1>.nb .ar{color:#fff}.mm .l2>.nb{border-color:var(--p);font-size:1rem}.mm .rel{font:600 .68rem inherit;color:var(--s);background:var(--bg);border-radius:99px;padding:1px 8px;margin-left:auto;white-space:nowrap}.mm .l1>.nb .rel{background:#fff3}.mm .dt{font:400 .85rem inherit;color:var(--mut);margin:2px 0 0 10px}.mm li:not(.open)>ul{display:none}.mm .lf>.nb{cursor:default;font-weight:500}.mmh{font:700 1.1rem Georgia,serif;margin:16px 0 8px;color:var(--p)}#mr div{padding:5px 0;border-bottom:1px solid var(--ln);font-size:.92rem}#mr div:last-child{border:0}#mr b{color:var(--p)}#mr i{color:var(--s);font-style:normal;font-weight:700}
+.fc{height:clamp(320px,62vh,460px)}.fa{font:700 1.15rem/1.4 Georgia,serif}.fb{display:block;text-align:left;font-size:.95rem}.fb .tg{font:700 .72rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--s);margin-top:8px}.fb .tg:first-child{margin-top:0}.bt{white-space:pre-line}.bt.ex{color:var(--mut)}.fa{white-space:pre-line}
+.qsum{margin-top:16px;border-collapse:collapse;width:100%;max-width:320px}.qsum th,.qsum td{border:1px solid var(--ln);padding:6px 10px;text-align:left}
+</style><style>
+:root{--bg:#f3f5f9;--card:#fff;--ink:#1c2433;--mut:#5d6778;--p:#1b3a6b;--s:#8c1d2f;--ln:#d3d9e4;--ok:#1d7a45;--bad:#b3261e}
+body{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.6}
+header{max-width:960px;border-bottom:3px double var(--p);padding-bottom:14px;margin-bottom:0}
+h1{font-size:clamp(2rem,6vw,2.8rem);letter-spacing:0}
+header p{font-style:italic}
+nav{gap:0;border-bottom:1px solid var(--ln);margin:0 auto 18px;padding:0 18px;max-width:960px}
+nav button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;color:var(--mut);padding:12px 16px;font-family:inherit;font-size:.95rem}
+nav button[aria-selected=true]{background:none;color:var(--p);border-bottom-color:var(--s)}
+h2{font-size:1.6rem;color:var(--p);border-bottom:1px solid var(--ln);padding-bottom:6px;margin-bottom:16px}
+.card,.note,.node,.chip,.opt,.btn,.steps button,input[type=search]{border-radius:4px}
+.card{box-shadow:0 1px 0 var(--ln)}
+.grid .card{border-left:4px solid var(--p);counter-increment:r}
+.grid .card:before{content:"Key point " counter(r);display:block;font:700 .78rem system-ui,sans-serif;color:var(--s);margin-bottom:3px}
+.grid{counter-reset:r}
+.grid .card b{display:none}
+th{background:var(--p);color:#fff;font-family:system-ui,sans-serif;font-size:.85rem}
+tr:nth-child(even) td{background:color-mix(in srgb,var(--p) 4%,var(--card))}
+td:first-child{color:var(--p)}
+.chip.on{background:var(--p);border-color:var(--p)}
+.node.on,.steps button.on{background:var(--p);border-color:var(--p)}
+.note{border:1px solid var(--ln);border-left:4px solid var(--s);background:var(--card)}
+.tl button:before{background:var(--s);border-radius:2px;transform:rotate(45deg)}
+.list button.on{background:var(--p)}
+.view h3{color:var(--p)}
+.fa{background:var(--p);border-radius:6px;border-bottom:6px solid var(--s)}
+.fb{border-radius:6px;border:1px solid var(--ln);border-top:6px solid var(--s);background:repeating-linear-gradient(var(--card),var(--card) 31px,var(--ln) 32px)}
+.btn{background:var(--p)}.btn.g{background:var(--card)}
+#qz .card{counter-reset:o}
+.opt{counter-increment:o;font-family:inherit}
+.opt:before{content:counter(o,upper-alpha) ".  ";font-weight:700;color:var(--p)}
+.prog i{background:var(--s)}
+footer{font-family:system-ui,sans-serif}
+.lv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}
+.lvb{display:flex;flex-direction:column;gap:2px;align-items:flex-start;text-align:left;padding:12px 14px;border:1.5px solid var(--ln);border-left:5px solid var(--s);border-radius:4px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit}
+.lvb b{color:var(--p);font-size:1rem}.lvb span{font:.8rem system-ui,sans-serif;color:var(--mut)}
+.lvb.on{background:var(--p);border-color:var(--p);border-left-color:var(--s)}.lvb.on b,.lvb.on span{color:#fff}
+@media(max-width:520px){.lv{grid-template-columns:1fr}}
+.ct{display:inline-block;margin:0 0 12px;padding:10px 22px;border:2px solid var(--p);border-bottom:4px solid var(--s);border-radius:6px;background:var(--card);color:var(--ink);font:700 1.15rem system-ui,sans-serif}.ct b{color:var(--s);font-size:1.25rem;margin-inline-start:6px;letter-spacing:.02em}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 18px}header .ct{margin:0;padding:8px 18px;font-size:1.05rem}header .ct b{font-size:1.2rem}
+a.ct{display:inline-flex;align-items:center;gap:8px;text-decoration:none}a.ct svg{flex:none}
+.ovw .card{margin-bottom:14px}.ovw h3{margin:0 0 8px;color:var(--p);font:700 1.2rem Georgia,serif;border-bottom:2px solid var(--s);padding-bottom:4px}
+.ovw h4{margin:14px 0 4px;color:var(--s);font:700 .95rem system-ui,sans-serif}.ovw .sub{margin:10px 0 2px;font:700 .85rem system-ui,sans-serif;color:var(--mut)}
+.ovw ul,.ovw ol{margin:4px 0;padding-inline-start:22px}.ovw li{margin:4px 0}.ovw p{margin:6px 0}
+.ovw td:first-child{white-space:normal}.ovw .card:before{content:none}
+</style><style>
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;margin:0 0 12px;color:var(--mut)}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.dg .dh{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}.dg .dh h3{margin:0;color:var(--p);font:700 1.2rem Georgia,serif}
+.bdg{background:var(--bg);border:1px solid var(--ln);border-radius:99px;padding:2px 10px;font-size:.75rem;color:var(--mut)}
+.pp{margin:6px 0;color:var(--ink)}.src{font-size:.8rem;color:var(--mut);margin:0 0 8px}
+.bar2{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.cv{overflow:auto;border:1px solid var(--ln);border-radius:10px;padding:12px;max-height:70vh;background:var(--bg);font-size:16px}
+.cv ul{list-style:none;margin:6px 0 0 11px;padding:0 0 0 1.4em;border-left:2px solid var(--ln)}.cv li{position:relative;margin:7px 0}
+.cv li:before{content:"";position:absolute;left:-1.4em;top:1.05em;width:1.1em;border-top:2px solid var(--ln)}
+.cv li.cl>ul{display:none}.nr{display:flex;align-items:center;gap:6px}
+.tg{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ln);background:var(--card);color:var(--ink);cursor:pointer;padding:0;line-height:1}
+.nd{border:2px solid var(--p);background:var(--card);color:var(--ink);border-radius:10px;padding:.5em .8em;font-family:inherit;font-weight:600;font-size:.9em;line-height:1.3;text-align:left;cursor:pointer;transition:box-shadow .15s}
+.r-m{background:var(--p);color:#fff}.r-b{border-color:var(--s)}.r-s{border-color:#1b6ca8}.r-r{border-color:var(--ok)}.r-w{border-color:var(--bad);background:#fdf0ee}
+.nd.rel{box-shadow:0 0 0 3px #f3b4cd}.nd.on{box-shadow:0 0 0 3px var(--s)}
+.sq{display:flex;flex-direction:column;align-items:flex-start;margin:8px 0 0 4px}.sq.h{flex-direction:row;align-items:flex-start}
+.it{display:flex;flex-direction:column;align-items:flex-start}.ar{display:flex;gap:8px;align-items:center;color:var(--s);padding:5px 10px;font-size:.85em}.sq.h .ar{flex-direction:column;padding:8px 4px;text-align:center;max-width:90px}
+.dt{background:var(--card);border:1px dashed var(--p);border-radius:10px;padding:12px;margin-top:10px;min-height:56px}.dt p{margin:4px 0}.dt ul{margin:4px 0;padding-left:20px}.rl{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2ede8;--card:#fcfaf7;--ink:#1d1a33;--mut:#6a647a;--p:#3a2e72;--s:#b94a24;--a:#d98f45;--ln:#e1d9cd}
+body{font-family:"Work Sans",system-ui,-apple-system,sans-serif;font-size:16.5px;line-height:1.6}
+h1,h2,h3,.view h3,.dg .dh h3,.ovw h3,.fa{font-family:Fraunces,Georgia,serif}
+header.hero{display:block;max-width:none;margin:0;padding:0;border:0;color:#fff;overflow:hidden;background:radial-gradient(600px 300px at 85% 20%,rgba(240,169,107,.16),transparent 70%),linear-gradient(135deg,#17143a 0%,#2b2362 55%,#3d3279 100%)}
+.hin{max-width:960px;margin:auto;padding:46px 22px 50px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.kick{color:#f0a96b;font-weight:600;font-size:.95rem;letter-spacing:.01em;margin-bottom:10px}
+header.hero h1{color:#fff;font:700 clamp(3.2rem,11vw,5.2rem)/.92 Fraunces,Georgia,serif;letter-spacing:-.02em;margin:0 0 20px}
+header.hero h1 em{display:block;color:#f0a96b;font-style:italic}
+.lead{color:#d6d0ee;max-width:34em;font-size:1.05rem;font-style:normal;margin:0 0 6px}
+header.hero .meta{color:#a9a2cf;font-style:normal;font-size:.9rem;margin:0 0 16px}
+header.hero a.ct{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28);border-radius:99px;color:#fff;padding:8px 18px;font:600 .95rem "Work Sans",system-ui,sans-serif}
+header.hero a.ct b{color:#f0a96b;font-size:1rem}
+.atom{flex:none;width:clamp(110px,24vw,210px);height:auto;opacity:.95}
+nav{max-width:none;margin:0 0 26px;padding:0 max(18px,calc((100% - 924px)/2));background:#fbf9f5;border-bottom:1px solid var(--ln)}
+nav button{font-family:"Work Sans",system-ui,sans-serif;font-weight:600;font-size:.98rem;padding:17px 20px;color:#5c5670;white-space:nowrap}
+nav button[aria-selected=true]{color:var(--p);border-bottom:4px solid var(--a)}
+h2{font:700 clamp(1.9rem,5vw,2.6rem)/1.1 Fraunces,Georgia,serif;color:var(--ink);border:0;padding:0;margin:0 0 10px;letter-spacing:-.01em}
+.sub0{color:var(--mut);max-width:42em;margin:0 0 24px;font-size:1.02rem}
+.card,.note,.dt,.opt,.btn,.node,.chip,.steps button,input[type=search],.lvb{border-radius:3px}
+.card{background:var(--card);border:0;box-shadow:none}
+.ovw .card{border-left:4px solid var(--a);padding:18px 22px}
+.ovw h3{font:700 .98rem "Work Sans",system-ui,sans-serif;color:var(--s);border:0;padding:0;margin:0 0 6px}
+.ovw h4{color:var(--p)}
+.grid .card{border-left:4px solid var(--a)}
+th{background:var(--p)}
+.fa{background:linear-gradient(135deg,#2b2362,#3d3279);border-bottom:6px solid var(--a)}
+.fb{border-top:6px solid var(--a)}
+.lvb{border-left:5px solid var(--a)}
+.lvb.on{border-left-color:var(--a)}
+.chip.on,.node.on,.steps button.on,.btn,.list button.on{background:var(--p);border-color:var(--p)}
+.btn.g{background:var(--card)}
+.prog i{background:var(--a)}
+.note{border-left:4px solid var(--a)}
+.tl button:before{background:var(--a)}
+a.ct{border-bottom-color:var(--a)}
+@media(max-width:560px){.hin{padding:34px 18px 38px}.atom{display:none}}
+</style><style>
+.dg .dh h3{font:700 1.15rem Fraunces,Georgia,serif;color:var(--ink)}
+.bdg{font:500 .72rem ui-monospace,Menlo,monospace;border:1px solid var(--ln);background:#fff;color:var(--mut);border-radius:99px;padding:3px 11px}
+.dg .dh{padding-bottom:10px;border-bottom:1px solid var(--ln);margin-bottom:10px}
+.bar2{align-items:center;margin:10px 0}
+.chip.rnd{width:34px;height:34px;padding:0;border-radius:50%;font-size:1.1rem;line-height:1}
+.zl{font:.75rem ui-monospace,Menlo,monospace;color:var(--mut);min-width:40px;text-align:center}
+.hint{margin-left:auto;font-size:.78rem;color:var(--mut)}
+.chip{border-radius:99px;background:#fff}
+.cv{background:#efeaf3;border:1px solid var(--ln);border-radius:6px;padding:0;overflow:auto;max-height:76vh}
+.cvi{position:relative;transform-origin:0 0}.cvi svg{position:absolute;left:0;top:0;pointer-events:none}
+.nd{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;box-sizing:border-box;padding:6px 10px;border-radius:7px;border:1.5px solid #5b4aa8;font:600 12.5px/1.25 "Work Sans",system-ui,sans-serif;background:#ece9f8;color:#241d57;overflow:hidden;transition:box-shadow .15s}
+.r-m{background:#2b2362;border-color:#2b2362;color:#fff}
+.r-b{background:#ece9f8;border-color:#5b4aa8;color:#241d57}
+.r-s{background:#e1edf7;border-color:#1b6ca8;color:#10375a}
+.r-r{background:#f7e8d2;border-color:#d98f45;color:#4a2f10}
+.r-w{background:#fbe6e0;border-color:#b94a24;color:#5a1f0a}
+.nd.on{box-shadow:0 0 0 3px #d98f45;filter:none}.nd.rel{box-shadow:0 0 0 3px #b9a9ee}
+.tgc{position:absolute;width:20px;height:20px;padding:0;border-radius:50%;border:1.5px solid #3a2e72;background:#fff;color:#3a2e72;font:700 13px/1 system-ui;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lg{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0;font-size:.78rem;color:var(--mut)}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;border:1.5px solid;margin-right:6px;vertical-align:-2px}
+.dt{border:0;border-left:4px solid var(--a);border-radius:2px;background:#ebe7f1;min-height:44px}
+.dg .src{font-size:.78rem;color:var(--mut);margin:8px 0 0}
+</style></head><body>
+<header class="hero"><div class="hin"><div class="ht"><div class="kick">Organic Chemistry — Lecture 1: Carboxylic Acids and their Derivatives</div><h1>Study<em>Smart.</em></h1><p class="lead">A compact, hands-on companion for the Carboxylic Acids and their Derivatives lecture — the definitions, the diagrams, the drills, and the recall you need before the exam.</p><p class="meta">3rd stage · 1st semester 2025–2026</p><a class="ct" dir="ltr" href="https://t.me/Study_smart5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="#29A9EB" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Contact</span> <b dir="ltr">@Study_smart5</b></a></div><svg class="atom" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#f3e9d8" stroke-width="3" stroke-linecap="round"><circle cx="100" cy="100" r="34" opacity=".55"/><circle cx="100" cy="100" r="68"/><path d="M32 100a68 68 0 0 1 4-23" opacity=".0"/></g><circle cx="100" cy="100" r="15" fill="#f0a96b"/><circle cx="92" cy="96" r="4" fill="#1a1740" opacity=".35"/><circle cx="106" cy="106" r="4" fill="#1a1740" opacity=".35"/><circle cx="134" cy="100" r="6" fill="#f3e9d8" opacity=".9"/><circle cx="168" cy="100" r="9" fill="#f0a96b"/><circle cx="168" cy="100" r="15" fill="none" stroke="#f0a96b" stroke-width="2" opacity=".4"/></svg></div></header>
+<nav role="tablist" id="nav"></nav>
+<main>
+<section id="s0"><h2>The essentials, at a glance</h2><p class="sub0">No slide-by-slide walkthrough here — just the definitions, laws, and numbers worth knowing cold.</p><div id="ov" class="ovw">
+<div class="card"><h3>Core Idea</h3><p>The lecture covers <b>carbonyl-containing compounds</b>: the <b>carboxylic acid</b> (R–COOH) and its four derivative families — <b>esters, amides, acid halides and acid anhydrides</b>. It follows nomenclature (aliphatic acids, di acids), physical properties and <b>acidity</b> (resonance and inductive effects), <b>preparation</b> and <b>reduction</b> of acids, formation of derivatives, then the preparation, reactions and examples of each derivative (aspirin, acetaminophen, nylon).</p></div>
+
+<div class="card"><h3>Learning Points</h3><ul>
+<li>Five carbonyl families: <b>carboxylic acid, ester, amide, acid halide (X = Cl, Br), acid anhydride</b>.</li>
+<li>Carboxylic acids typically have <b>pKa 4–5</b>: weaker than inorganic acids (negative pKa), stronger than alcohols (pKa ≈ 15–16).</li>
+<li>Acidity is explained by <b>resonance stabilization</b> of the carboxylate anion (delocalized over both oxygens); the <b>inductive effect</b> of Cl increases acidity: trichloroacetic &gt; dichloroacetic &gt; chloroacetic.</li>
+<li>Acids are prepared by <b>ozonolysis, Grignard + CO₂, nitrile hydrolysis, oxidation of primary alcohols/aldehydes, and oxidation of Ar–CHR₂</b>.</li>
+<li>LAH reduces acids to <b>primary alcohols</b>; LiAlH₄ reduces esters to <b>primary alcohols</b> and amides to <b>amines</b>; Grignard converts esters to <b>tert-alcohols</b>.</li>
+<li>Acid derivatives are interconvertible by <b>nucleophilic substitution</b>: acid chlorides and anhydrides react readily with water, alcohols and ammonia; amides are unreactive because of resonance.</li>
+<li>Amides have <b>exceptionally high boiling points</b> (hydrogen bonding); N-alkylation lowers b.p. and m.p.</li></ul></div>
+
+<div class="card"><h3>Key Definitions</h3><ul>
+<li><b>Carboxylic acid:</b> R–C(=O)–OH.</li>
+<li><b>Ester:</b> derived from an acid by replacing the OH group by an OR group (R–C(=O)–OR′).</li>
+<li><b>Amide:</b> R–C(=O)–NH₂ (or NHR, NR₂).</li>
+<li><b>Acid halide:</b> R–C(=O)–X, X = Cl, Br. <b>Acid chloride</b> = the chloride (e.g. acetyl chloride, benzoyl chloride).</li>
+<li><b>Acid anhydride:</b> formed from the combination of two acids and the loss of water (R–CO–O–CO–R).</li>
+<li><b>Di acid (aliphatic dicarboxylic acid):</b> given the suffix <b>–dioic acid</b> in the IUPAC system; many occur in nature and keep common names based on their source.</li>
+<li><b>Lactone:</b> cyclic ester. <b>Lactam:</b> cyclic amide.</li>
+<li><b>Ozonolysis:</b> O₃ cleavage of an alkene, then H₂O₂.</li>
+<li><b>Ammonolysis of esters:</b> ammonia converts esters to amides.</li>
+<li><b>Neutralization reaction:</b> acid + NaOH → carboxylate salt + H₂O. <b>Substitution reaction:</b> acid + alcohol → ester (OH replaced by OR).</li>
+<li><b>Lachrymator:</b> tear gas (benzoyl chloride).</li>
+<li><b>Analgesics:</b> painkillers. <b>Antipyretics:</b> fever reducers.</li></ul></div>
+
+<div class="card"><h3>Classification / Types</h3>
+<h4>1. Carbonyl-containing compounds (families)</h4><ul>
+<li><b>Carboxylic acid</b> R–COOH · <b>Ester</b> R–COOR′ · <b>Amide</b> R–CONH₂ · <b>Acid halide</b> R–COX (X = Cl, Br) · <b>Acid anhydride</b> R–CO–O–CO–R.</li></ul>
+<h4>2. Aliphatic carboxylic acids (Table 1)</h4>
+<div class="sc"><table><thead><tr><th>C atoms</th><th>Formula</th><th>Common name</th><th>IUPAC name</th></tr></thead><tbody>
+<tr><td>1</td><td>HCOOH</td><td>Formic acid</td><td>methanoic acid</td></tr>
+<tr><td>2</td><td>CH₃COOH</td><td>Acetic acid</td><td>ethanoic acid</td></tr>
+<tr><td>3</td><td>CH₃CH₂COOH</td><td>Propionic acid</td><td>propanoic acid</td></tr>
+<tr><td>4</td><td>CH₃CH₂CH₂COOH</td><td>Butyric acid</td><td>butanoic acid</td></tr>
+<tr><td>5</td><td>CH₃(CH₂)₃COOH</td><td>Valeric acid</td><td>pentanoic acid</td></tr>
+<tr><td>6</td><td>CH₃(CH₂)₄COOH</td><td>Caproic acid</td><td>hexanoic acid</td></tr></tbody></table></div>
+<h4>3. Aliphatic di carboxylic acids (Table 2)</h4>
+<div class="sc"><table><thead><tr><th>Formula</th><th>Common name</th><th>IUPAC name</th></tr></thead><tbody>
+<tr><td>HOOC–COOH</td><td>oxalic acid</td><td>ethanedioic acid</td></tr>
+<tr><td>HOOC–CH₂–COOH</td><td>malonic acid</td><td>propanedioic acid</td></tr>
+<tr><td>HOOC–(CH₂)₂–COOH</td><td>succinic acid</td><td>butanedioic acid</td></tr>
+<tr><td>HOOC–(CH₂)₃–COOH</td><td>glutaric acid</td><td>pentanedioic acid</td></tr>
+<tr><td>HOOC–(CH₂)₄–COOH</td><td>adipic acid</td><td>hexanedioic acid</td></tr>
+<tr><td>HOOC–(CH₂)₅–COOH</td><td>pimelic acid</td><td>heptanedioic acid</td></tr></tbody></table></div>
+<ul><li>Unsaturated di acids: <b>2-butenedioic acid</b> (C=C) and <b>2-butynedioic acid</b> (C≡C).</li>
+<li>Two-butenedioic acids: <b>maleic acid (cis)</b> and <b>fumaric acid (trans)</b>.</li>
+<li>Three benzene di carboxylic acids: <b>phthalic</b> (ortho), <b>isophthalic</b> (meta), <b>terephthalic</b> (para).</li></ul>
+<h4>4. Physical properties of carboxylic acids</h4><ul><li>Hydrogen bonding · solubility in water (lower acids) · acidity (Tables 3 and 4).</li></ul>
+<h4>5. Preparation routes of carboxylic acids</h4><ul>
+<li>Alkene ozonolysis (O₃, then H₂O₂) · Alkyl halide → Grignard (Mg; 1. CO₂, 2. H₃O⁺) · Nitrile hydrolysis (H₃O⁺, heat) · Primary alcohol oxidation (strong oxidant KMnO₄; weak oxidant PCC gives aldehyde, then oxidation) · Ar–CHR₂ oxidation → Ar–COOH.</li>
+<li><b>Benzoic acid from benzene</b> (two methods): KMnO₄ oxidation of an aliphatic chain; Grignard reagent.</li></ul>
+<h4>6. Derivatives of carboxylic acids (reagent → product)</h4><ul>
+<li><b>SOCl₂ / base</b> → acid halide.</li>
+<li><b>RCO₂H / heat</b> → acid anhydride.</li>
+<li><b>R′OH, H⁺ / heat</b> → ester.</li>
+<li><b>R₂NH / heat</b> → amide.</li>
+<li><b>Base (e.g. NaOH)</b> → acid salt + H₂O.</li></ul>
+<h4>7. Cyclic derivatives</h4><ul><li><b>Lactones (cyclic esters):</b> γ-lactone, β-lactone. <b>Lactams (cyclic amides):</b> γ-lactam, β-lactam.</li></ul>
+<h4>8. Amide types</h4><ul><li><b>Primary (1°)</b> R–CONH₂ · <b>Secondary (2°)</b> R–CONHR · <b>Tertiary (3°)</b> R–CONR₂.</li></ul>
+<h4>9. Anhydride types</h4><ul><li>Symmetrical: <b>benzoic anhydride, acetic anhydride</b>. Mixed: <b>acetic benzoic anhydride</b>.</li></ul></div>
+
+<div class="card"><h3>Important Concepts</h3>
+<h4>Physical properties (Table 3)</h4>
+<div class="sc"><table><thead><tr><th>Acid</th><th>b.p. °C</th><th>m.p. °C</th><th>Solubility g/100 g H₂O, 25 °C</th></tr></thead><tbody>
+<tr><td>formic</td><td>100.5</td><td>8</td><td>∞</td></tr>
+<tr><td>acetic</td><td>118</td><td>16.6</td><td>∞</td></tr>
+<tr><td>propanoic</td><td>141</td><td>−22</td><td>∞</td></tr>
+<tr><td>butanoic</td><td>164</td><td>−8</td><td>∞</td></tr>
+<tr><td>pentanoic</td><td>187</td><td>−34</td><td>3.7</td></tr>
+<tr><td>hexanoic</td><td>205</td><td>−1.5</td><td>1.0</td></tr></tbody></table></div>
+<ul><li>Boiling point rises with chain length; the lower acids (C1–C4) are completely water-miscible, solubility drops from pentanoic acid onward.</li></ul>
+<h4>Acidity of carboxylic acids</h4><ul>
+<li>Weaker than inorganic acids (e.g. HCl), much stronger than most other hydrocarbon-type compounds (alcohols, ketones, alkynes). pKa: <b>carboxylic acids 4–5</b>; inorganic acids negative; <b>alcohols ≈ 15–16</b>.</li>
+<li>Both acids and alcohols are <b>Brønsted–Lowry acids</b>: they ionize to H⁺ and an anionic conjugate base with the negative charge on oxygen.</li>
+<li>The <b>carboxylate anion</b> is more stable (weaker base) than the <b>alkoxide anion</b>: its electrons are <b>delocalized over both oxygen atoms</b> (resonance stabilized); the alkoxide is localized (not stabilized).</li>
+<li>Greater anion stability shifts the dissociation equilibrium toward more anion → higher H⁺ concentration → higher acidity.</li></ul>
+<h4>Ionization constants (Table 4)</h4>
+<div class="sc"><table><thead><tr><th>Acid</th><th>Formula</th><th>Ka</th><th>pKa</th></tr></thead><tbody>
+<tr><td>formic</td><td>HCOOH</td><td>17.7 × 10⁻⁵</td><td>3.68</td></tr>
+<tr><td>acetic</td><td>CH₃COOH</td><td>1.75 × 10⁻⁵</td><td>4.74</td></tr>
+<tr><td>propionic</td><td>CH₃CH₂COOH</td><td>1.4 × 10⁻⁵</td><td>4.85</td></tr>
+<tr><td>butyric</td><td>CH₃CH₂CH₂COOH</td><td>1.6 × 10⁻⁵</td><td>4.80</td></tr>
+<tr><td>chloroacetic</td><td>ClCH₂COOH</td><td>136 × 10⁻⁵</td><td>2.82</td></tr>
+<tr><td>dichloroacetic</td><td>Cl₂CHCOOH</td><td>5530 × 10⁻⁵</td><td>1.30</td></tr>
+<tr><td>trichloroacetic</td><td>Cl₃CCOOH</td><td>23200 × 10⁻⁵</td><td>0.7</td></tr></tbody></table></div>
+<ul><li><b>Resonance and inductive effect:</b> the acidity of <b>trichloroacetic acid is stronger</b> than dichloroacetic and chloroacetic acid (more Cl → larger Ka, lower pKa).</li></ul>
+<h4>Reduction of carboxylic acids</h4><ul>
+<li>LAH (LiAlH₄) reduces acids to alcohols: the initial product is an aldehyde, which is further reduced to an <b>alkoxide anion</b>; protonation then gives the <b>primary alcohol</b>.</li>
+<li><b>Both carbonyl groups are reduced</b> (di acid: oxalic acid → ethylene glycol).</li></ul>
+<h4>Esters</h4><ul>
+<li>Naming: the <b>R of the OR group first</b>, then the acid name with <b>–ic changed to –ate</b> (analogous to carboxylic acid salts).</li>
+<li>Esters of simple acids have fruity odors (apple, strawberries, pineapples, apricots).</li>
+<li><b>Ammonolysis:</b> ester + NH₃ (dry ether) → amide + R′OH.</li>
+<li><b>Reduction:</b> LiAlH₄/ether → primary alcohol (RCH₂OH) + R′OH. <b>Grignard (R″MgX)</b> → tert-alcohol.</li></ul>
+<h4>Acid halides</h4><ul>
+<li>Prepared from acids with <b>thionyl chloride or phosphorus halides</b> (PCl₅, PCl₃, SOCl₂).</li>
+<li>React <b>rapidly with most nucleophiles</b> (water, alcohols, ammonia); irritating odors.</li></ul>
+<h4>Acid anhydrides</h4><ul>
+<li>Two acids − H₂O (H⁺, heat). <b>Mixed anhydride</b> prepared from a carboxylate (acid + NaOH) attacking an acid chloride (acid + PCl₃).</li>
+<li>Nucleophilic substitution of anhydrides: H₂O → 2 acids; ROH → ester + acid; NH₃ → amide + acid.</li></ul>
+<h4>Di acids on heating</h4><ul>
+<li><b>Maleic acid</b> (cis) at 135 °C → maleic anhydride + H₂O; <b>fumaric acid</b> (trans): no reaction.</li>
+<li><b>Phthalic acid</b> + heat → phthalic anhydride; <b>isophthalic</b> and <b>terephthalic</b> acids: no reaction.</li></ul>
+<h4>Amides</h4><ul>
+<li>Nomenclature: similar to carboxylic acid; <b>drop the –oic acid ending and replace with –amide</b>.</li>
+<li><b>Exceptionally high boiling points</b> for their molecular weight; alkyl substitution on N lowers b.p. and m.p. by decreasing hydrogen-bonding possibilities.</li>
+<li><b>Preparation:</b> acid + NH₃/heat; acid chloride + NH₃/heat.</li>
+<li><b>Not reactive because of resonance</b> (carbonyl–amine resonance, structures A ↔ B).</li>
+<li><b>Hydrolysis</b> (H⁺ or OH⁻, H₂O) → acid + NH₃; slow, needs prolonged heating or acid/base catalysts. <b>Reduction</b> with LiAlH₄/ether → amines (RCH₂NH₂), an excellent way to make primary amines.</li>
+<li><b>Nylon:</b> a diamine + a diacid chloride give a polymer with amide bonds (polyamide).</li></ul></div>
+
+<div class="card"><h3>Important Differences</h3><div class="sc"><table><thead><tr><th>Concept</th><th>Difference</th></tr></thead><tbody>
+<tr><td>Carboxylate vs alkoxide anion</td><td>Carboxylate: delocalized over both O, resonance stabilized, weaker base. Alkoxide: localized, not stabilized.</td></tr>
+<tr><td>Carboxylic acid vs alcohol (acidity)</td><td>Acids pKa 4–5; alcohols pKa ≈ 15–16; inorganic acids negative pKa.</td></tr>
+<tr><td>Chloro-, dichloro-, trichloroacetic acid</td><td>pKa 2.82, 1.30, 0.7; trichloroacetic is the strongest (acetic acid 4.74).</td></tr>
+<tr><td>Maleic vs fumaric acid</td><td>Maleic = cis-2-butenedioic; fumaric = trans-2-butenedioic. At 135 °C maleic gives the anhydride; fumaric does not.</td></tr>
+<tr><td>Phthalic vs isophthalic vs terephthalic</td><td>Ortho, meta, para benzene di acids; only phthalic acid forms an anhydride on heating.</td></tr>
+<tr><td>Ketone vs aldehyde (ozonolysis products)</td><td>Ketone: no oxidation. Aldehyde: oxidized to acid.</td></tr>
+<tr><td>Strong vs weak oxidant on R–CH₂OH</td><td>Strong (KMnO₄) → acid. Weak (PCC) → aldehyde, which can be oxidized further.</td></tr>
+<tr><td>Toluene, ethylbenzene, cumene vs tert-butylbenzene</td><td>The first three give benzoic acid with KMnO₄; tert-butylbenzene: NO reaction.</td></tr>
+<tr><td>Isomeric esters (R and R′ interchanged)</td><td>Phenyl acetate (b.p. 195.7 °C) vs methyl benzoate (b.p. 196.8 °C) have different names.</td></tr>
+<tr><td>Lactone vs lactam</td><td>Lactone = cyclic ester; lactam = cyclic amide. (γ and β forms.)</td></tr>
+<tr><td>Acid chlorides/anhydrides vs amides</td><td>Acid chlorides react rapidly with nucleophiles; amides are not reactive (resonance); amide hydrolysis is slow.</td></tr>
+<tr><td>Primary vs secondary vs tertiary amide</td><td>NH₂ / NHR / NR₂ on the carbonyl; N-alkylation lowers b.p. (formamide 210 vs N,N-dimethylformamide 153; acetamide 222 vs N,N-dimethylacetamide 165 °C).</td></tr>
+<tr><td>LAH on acid/ester vs amide</td><td>Acid and ester → primary alcohol; amide → amine.</td></tr>
+</tbody></table></div></div>
+
+<div class="card"><h3>Processes / Stages</h3>
+<h4>Propene → propionic acid</h4><p>Propene → (H₂O/H₂O₂) propanol → (PCC) propanal → (KMnO₄) propionic acid.</p>
+<h4>Alkene ozonolysis route</h4><p>Alkene → O₃ → ketone (no oxidation) and/or aldehyde → oxidation → acid. Example: cis-2-butene → (1. O₃, 2. H₂O₂) acetaldehyde → acetic acid.</p>
+<h4>1-Chloropropane → butanoic acid (two routes)</h4><ol>
+<li>CN⁻ → CH₃CH₂CH₂–CN → hydrolysis (H₃O⁺, or NaOH/H⁺) → butanoic acid.</li>
+<li>Mg → CH₃CH₂CH₂MgCl → 1. CO₂, 2. H⁺ → butanoic acid.</li></ol>
+<h4>Benzoic acid from benzene</h4><ol>
+<li><b>Method 1:</b> benzene + CH₃Cl/AlCl₃ → toluene → KMnO₄ → benzoic acid.</li>
+<li><b>Method 2:</b> benzene + Cl₂/FeCl₃ → chlorobenzene → Mg → phenylmagnesium chloride → 1. CO₂, 2. H⁺ → benzoic acid.</li></ol>
+<h4>Reduction of acetic acid</h4><p>1. LAH, 2. H⁺ → ethanol (primary alcohol).</p>
+<h4>Mixed anhydride (acetic benzoic anhydride)</h4><ol>
+<li>Acetic acid + NaOH → acetate anion.</li>
+<li>Benzoic acid + PCl₃ → benzoyl chloride.</li>
+<li>Acetate attacks benzoyl chloride (loss of Cl⁻) → acetic benzoic anhydride.</li></ol>
+<h4>Nylon synthesis</h4><p>n adipoyl chloride + n hexamethylene diamine → polyamide nylon (amide bonds).</p></div>
+
+<div class="card"><h3>Important Scientists / Discoveries</h3><div class="sc"><table><thead><tr><th>Item</th><th>Contribution</th></tr></thead><tbody>
+<tr><td>Maleic and fumaric acids (the two butenedioic acids)</td><td>Played a historic role in the discovery of <b>cis–trans isomerism</b>.</td></tr>
+<tr><td>Adipic acid</td><td>The most important commercial compound among the di acids; used to manufacture <b>nylon</b>.</td></tr>
+</tbody></table></div></div>
+
+<div class="card"><h3>Examples</h3><ul>
+<li><b>Substituted acids:</b> 3-bromobutanoic acid; 3,4-dichloropentanoic acid; 2-ethylbutanoic acid; 4-chlorobenzoic acid.</li>
+<li><b>Esters:</b> methyl acetate (methyl ethanoate, b.p. 57 °C); ethyl acetate (ethyl ethanoate, 77 °C); methyl butyrate (methyl butanoate, 102 °C); phenyl acetate (195.7 °C); methyl benzoate (196.8 °C); sodium benzoate (salt); propyl butanoate (butanoic acid + propanol).</li>
+<li><b>Ester nomenclature:</b> ethyl 2-chloro-3-oxobutanoate; isopropyl 4-hydroxy-3,5-dimethylhexanoate; methyl 2-butenoate; phenyl 3-oxobutanoate; ethyl 2-pentynoate; dimethyl malonate; tert-butyl cyclohexanecarboxylate.</li>
+<li><b>Formation of esters:</b> ethanoic acid + ethanol → ethyl ethanoate + H₂O; propanoic acid + methanol → methyl propanoate + H₂O.</li>
+<li><b>“Smelly stuff”:</b> methyl butanoate – apple; <i>O</i>-methyl butanethioate – strawberries; ethyl butanoate – pineapples; pentyl butanoate – apricots.</li>
+<li><b>Ammonolysis:</b> methyl benzoate + NH₃ → benzamide + CH₃OH; formic acid + NH₃ → formamide.</li>
+<li><b>Acid chlorides:</b> acetyl chloride (ethanoyl chloride) from acetic acid + PCl₅; benzoyl chloride (BZCl) from benzoic acid + PCl₃/PCl₅/SOCl₂. Acetyl chloride + H₂O → acetic acid + HCl; + EtOH → ethyl acetate + HCl; + NH₃ → acetamide + HCl; + acetic acid → acetic anhydride + HCl.</li>
+<li><b>Anhydrides:</b> acetic anhydride (2 acetic acid, H⁺/heat); maleic anhydride; phthalic anhydride.</li>
+<li><b>Amides:</b> propionamide (propanamide), benzamide, cyclopentanecarboxamide, N,N-dimethylcyclohexanecarboxamide, formamide, N,N-dimethylformamide, acetamide, N,N-dimethylacetamide.</li>
+<li><b>Neutralization:</b> CH₃COOH + NaOH → CH₃COONa + H₂O.</li>
+<li><b>Reduction:</b> acetic acid → ethanol; oxalic acid → ethylene glycol.</li>
+<li><b>Nylon:</b> adipoyl chloride + hexamethylene diamine → polyamide nylon.</li></ul></div>
+
+<div class="card"><h3>Clinical / Practical Importance</h3><ul>
+<li><b>Aspirin</b> (2-acetoxybenzoic acid = acetyl salicylic acid): made from <b>salicylic acid</b> (2-hydroxybenzoic acid) + <b>acetic anhydride</b>.</li>
+<li><b>Acetaminophen (Tylenol):</b> an amide-containing drug. Aspirin and acetaminophen are given as examples of <b>analgesics (painkillers)</b> and <b>antipyretics (fever reducers)</b>.</li>
+<li><b>Adipic acid</b> → nylon (commercial); <b>nylon</b> is a polyamide built from amide bonds.</li>
+<li>Acyl halides have irritating odors; <b>benzoyl chloride is a lachrymator (tear gas)</b>.</li>
+<li>Amides are an excellent route to <b>primary amines</b> (LiAlH₄ reduction).</li></ul></div>
+
+<div class="card"><h3>Exam Focus</h3><ul>
+<li>The five carbonyl families with their general formulas (X = Cl, Br).</li>
+<li>Tables 1 and 2: formula, common name and IUPAC name of C1–C6 acids and the six di acids (oxalic → pimelic); the –dioic acid suffix.</li>
+<li>Maleic (cis) vs fumaric (trans); phthalic / isophthalic / terephthalic; which forms an anhydride on heating; adipic acid → nylon.</li>
+<li>Table 3 trends (b.p. increases, solubility ∞ up to C4) and why: hydrogen bonding.</li>
+<li>Acidity: pKa 4–5 vs alcohols 15–16 vs inorganic negative; carboxylate resonance vs alkoxide; Cl₃CCOOH &gt; Cl₂CHCOOH &gt; ClCH₂COOH (inductive effect); Table 4 values.</li>
+<li>The five preparation routes of acids, and the examples (propene → propionic acid; cis-2-butene → acetic acid; 1-chloropropane → butanoic acid).</li>
+<li>Benzoic acid: toluene, ethylbenzene, cumene react with KMnO₄; tert-butylbenzene does not; the Grignard route.</li>
+<li>LAH: acid → primary alcohol (oxalic acid → ethylene glycol); ester → primary alcohol; amide → amine; ester + Grignard → tert-alcohol.</li>
+<li>Reagents for derivatives: SOCl₂ (acid halide), RCO₂H/heat (anhydride), R′OH/H⁺ (ester), R₂NH/heat (amide), NaOH (salt).</li>
+<li>Ester naming (–ic → –ate), isomeric ester pair, “smelly stuff” fruit esters, lactones vs lactams.</li>
+<li>Acid chlorides: PCl₅/PCl₃/SOCl₂; reactions with H₂O, EtOH, NH₃, acid; benzoyl chloride = lachrymator.</li>
+<li>Anhydrides: preparation, mixed anhydride, maleic vs fumaric, aspirin synthesis (salicylic acid + acetic anhydride).</li>
+<li>Amides: –oic acid → –amide; 1°/2°/3°; b.p. data (formamide 210, DMF 153, acetamide 222, DMAc 165 °C); unreactive due to resonance; hydrolysis is slow; nylon.</li></ul></div>
+</div>
+</section>
+<section id="s1"><h2>Interactive Diagrams</h2>
+
+<div id="dgs"></div></section>
+<section id="s2"><h2>Mini Map</h2><div class="mmbar"><button class="chip" id="mxa">Expand all</button><button class="chip" id="mca">Collapse all</button></div><div class="card mm" id="mm"></div><h3 class="mmh">Key Relationships</h3><div class="card" id="mr"></div></section>
+<section id="s3"><h2>Flash Cards</h2><div class="lv" id="fl"></div><div class="bar"><span id="fn"></span></div><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flip card"><div class="fi"><div class="fa" id="fq"></div><div class="fb" id="fans"></div></div></div><div class="bar"><button class="btn g" id="fp">Previous</button><button class="btn" id="ff">Flip</button><button class="btn g" id="fx">Next</button><button class="btn g" id="fs">Shuffle</button></div></section>
+<section id="s4"><h2>Quiz Bank</h2><div class="lv" id="ql"></div><div id="qz"></div><table class="qsum"><thead><tr><th>Level</th><th>Questions</th></tr></thead><tbody><tr><td>Easy</td><td>25</td></tr><tr><td>Medium</td><td>15</td></tr><tr><td>Hard</td><td>10</td></tr><tr><td><b>Total</b></td><td><b>50</b></td></tr></tbody></table></section>
+</main>
+<footer>© 2026 Anmar Taha. All rights reserved.</footer>
+<script>
+const $=s=>document.querySelector(s),E=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const G={B:"Basics",K:"Methods & early history",H:"History",A:"Pure vs applied",T:"Branches",I:"Integrative",C:"Infection types",S:"Spread",P:"Pathogens",X:"Toxins",G:"Stages",F:"Benefits",N:"Bacterial infection"};
+const D=[
+["B","Microbiology","From Greek mikros (small), bios (life), -logia (study): the study of microscopic organisms. They may be unicellular, a cell cluster, or acellular (no cells), and must be viewed with a microscope or electron microscope."],
+["B","Microbiologist","A specialist in microbiology."],
+["H","Hooke (1660s)","First observed microorganisms with a microscope, coined the term “cell”, and observed the fruiting bodies of molds."],
+["H","Leeuwenhoek (1632–1723)","Dutch scientist credited with observing the first bacteria."],
+["H","Pasteur (1822–1895)","Defined pasteurization (prevents food spoilage by bacteria) and germ theory; showed germs cause disease."],
+["H","Cohn (1828–1898)","Developed the first classification scheme based on bacterial shape; described the life cycle of Bacillus."],
+["H","Koch (1843–1910)","Identified anthrax, developed agar growth medium; Koch’s postulates are a systematic method to establish the microbial cause of disease."],
+["T","Bacteriology","The study of bacteria."],["T","Mycology","The study of fungi."],["T","Protozoology","The study of protozoa."],["T","Phycology (algology)","The study of algae."],["T","Parasitology","The study of parasites."],["T","Immunology","The study of the immune system."],["T","Virology","The study of viruses."],["T","Nematology","The study of nematodes."],
+["I","Microbial cytology","Study of microscopic and submicroscopic details of microorganisms."],
+["I","Microbial physiology","How the microbial cell functions biochemically: growth, metabolism and cell structure."],
+["I","Microbial ecology","The relationship between microorganisms and their environment."],
+["I","Microbial genetics","How genes are organized and regulated in microbes in relation to cellular functions."],
+["C","Infection","Entry, establishment and multiplication of pathogenic organisms within a host."],
+["C","Primary infection","An initial infection in a previously healthy individual, later complicated by an additional (secondary) infection."],
+["C","Secondary infection","An infection that compounds a preexisting one."],
+["C","Acute infection","Rapid onset and short duration."],
+["C","Chronic infection","Any process or disease that persists over a long duration."],
+["S","Localized infection","A microbe enters a specific tissue, infects it and remains confined there."],
+["S","Systemic infection","Invades many compartments and organs via the circulation; occurs throughout the body."],
+["S","Focal infection","An infectious agent breaks loose from a localized infection and is carried by the circulation to other tissues."],
+["S","Mixed (synergistic) infection","Several different pathogens interact simultaneously to produce an infection."],
+["S","Portal of entry","Route of entry for an infectious agent; typically a cutaneous or membranous route."],
+["S","Infectious disease","The state of damage or toxicity in the body caused by an infectious agent."],
+["P","Pathogen","Any agent (usually virus, bacterium, fungus, protozoan or helminth) that causes disease."],
+["P","Pathogenicity","The capacity of microbes to cause disease or infection."],
+["P","True (primary) pathogen","A microbe able to cause infection and disease in healthy persons with normal immune defenses."],
+["P","Opportunistic pathogen","Causes disease when host defenses are compromised, or when established in a part of the body that is natural to it."],
+["P","Pathologic","Capable of inducing physical damage to the host."],
+["P","Virulence","The relative capacity of a pathogen to invade and harm host cells."],
+["P","Virulence factor","A microbe’s structures or capabilities that let it establish itself in a host and cause damage."],
+["X","Toxigenicity","The tendency of a pathogen to produce toxins."],
+["X","Toxinoses","Disease whose adverse effects are primarily due to production and release of toxins."],
+["X","Toximias (toxin + blood)","A toxin (microbial or otherwise) is spread throughout the bloodstream."],
+["X","Intoxications (botulism)","Caused by ingestion of toxins."],
+["G","Incubation period","From initial contact with an infectious agent to the appearance of the first symptoms."],
+["G","Prodromal stage","A short period of mild symptoms at the end of incubation; indicates the onset of disease."],
+["G","Period of invasion","The agent multiplies at high levels, shows its greatest toxicity and becomes well established in target tissues."],
+["G","Convalescent period","Recovery: between the end of the disease and complete restoration of health."],
+["F","Industrial fermentation","E.g. alcohol, vinegar (Acetobacteraceae) and dairy products."],
+["F","Antibiotic production","Beta-lactams, including penicillins (from fungi of the genus Penicillium) and cephalosporins."],
+["F","Cloning vehicles","Microbes serve as vehicles for cloning in more complex organisms such as plants."],
+["F","Biotech enzymes","E.g. Taq polymerase, reporter genes, and techniques like the yeast two-hybrid system."],
+["F","Biopolymers","Microorganisms are used for biosynthesis of xanthan, alginate and cellulose."],
+["F","Bioremediation","Biodegradation of domestic, agricultural and industrial wastes and subsurface pollution in soils, sediments and marine environments."],
+["F","Probiotics","Bacteria potentially beneficial to the digestive system (prebiotics are related)."],
+["N","Normal flora","E.g. Staphylococcus aureus, Streptococcus pneumoniae, Haemophilus influenzae: potential pathogens living commensally or parasitically without disease unless host barriers, tissue resistance or immunity are weakened."],
+["N","Endogenous bacterial disease","Disease caused when a member of the normal flora infects: bacteria “from within”."],
+["N","Classic opportunistic infections","Dental caries and periodontal disease caused by normal flora of the oral cavity."],
+["N","Sterile sites","Normal flora and contaminants live on body surfaces; blood and internal tissues are sterile."],
+["N","Outcome of infection","Infection rarely leads to disease. Outcome depends on route of entry, number of infectious bacteria, and (most importantly) the status of host defenses."],
+["K","Microbiological procedure","Two routes: stains (basic simple and basic compound) and microscopes (electron microscope and light microscope)."],
+["K","Ancient period","Before the discovery of the microscope: the existence of microorganisms was hypothesized for many centuries."],
+["K","Modern period","After the invention of the microscope; begins with Hooke’s observations in the 1660s."],
+["K","Leeuwenhoek’s book","One of his books has a Latin chapter that translates as “Concerning the wonderful structure of things in nature”, investigated by microscope."],
+["A","Branches of microbiology","Classified into pure and applied sciences."],
+["A","Taxonomic arrangement","Pure microbiology organized by group: bacteriology, mycology, protozoology, phycology (algology), parasitology, immunology, virology, nematology."],
+["A","Integrative arrangement","Pure microbiology organized by function: microbial cytology, physiology, ecology and genetics."],
+["A","Applied microbiology","Practical benefits: industrial fermentation, antibiotics, cloning vehicles, enzymes, biopolymers, bioremediation and probiotics."],
+["F","Beta-lactam antibacterials","Include the penicillins (produced by fungi of the genus Penicillium) and the cephalosporins."],
+["N","Commensal or parasitic relationship","Potential pathogens in the normal flora can live this way without producing disease."],
+["N","Transmission between hosts","Bacteria can be transmitted from one host to another, giving them additional opportunities to colonize or infect."],
+["N","When infection occurs","If a bacterium, whether or not part of the normal flora, breaches a body surface, an infection is said to have occurred."],
+["N","Infection vs infectious disease","Infection does not necessarily lead to infectious disease; infection probably rarely does."]
+];
+// tabs
+const names=["Overview","Interactive Diagrams","Mini Map","Flash Cards","Quiz Bank"];
+names.forEach((n,i)=>{const b=E("button","",n);b.setAttribute("role","tab");b.onclick=()=>go(i);$("#nav").append(b)});
+function go(i){document.querySelectorAll("section").forEach((s,k)=>s.classList.toggle("on",k==i));document.querySelectorAll("nav button").forEach((b,k)=>b.setAttribute("aria-selected",k==i))}
+go(0);
+// ===== Interactive Diagrams (source: lecture only) =====
+const N=(i,l,k,d,c,x)=>({i,l,k,d,c:c||[],x:x||[]});
+const DG=[
+{t:"Carbonyl-Containing Compounds",ty:"Classification Tree",p:"Carboxylic acid and its four derivative families.",src:"Carbonyl containing compounds (p.1)",
+n:N("cc","Carbonyl containing compounds","m","Carboxylic acid and its derivatives (Lecture 1).",[
+ N("ca","Carboxylic acid","b","R–C(=O)–OH",[N("ac1","Aliphatic acids","r","Table 1: C1 formic (methanoic) → C6 caproic (hexanoic).")]),
+ N("es","Ester","r","R–C(=O)–OR′"),
+ N("am","Amide","r","R–C(=O)–NH₂"),
+ N("ah","Acid halide","r","R–C(=O)–X, where X = Cl, Br"),
+ N("an","Acid anhydride","r","R–C(=O)–O–C(=O)–R")]),c:[]},
+{t:"Why Carboxylic Acids Are Acidic",ty:"Concept Map",p:"Resonance stability of the carboxylate vs the alkoxide.",src:"Acidity of Carboxylic Acids (p.4)",
+n:N("ay","Ionization (Brønsted–Lowry acid)","m","Carboxylic acids and alcohols both ionize to give H⁺ and an anionic conjugate base with the negative charge on oxygen.",[
+ N("cx","Carboxylate anion","b","Electrons delocalized over both oxygen atoms; resonance stabilized; weaker base.",[N("c2","pKa ≈ 4–5","r","Much weaker than inorganic acids (negative pKa), much stronger than most hydrocarbons.")]),
+ N("ox","Alkoxide anion","w","Not resonance stabilized (localized); less stable.",[N("o2","Alcohol pKa ≈ 15–16","r","Less acidic than carboxylic acids.")])]),
+c:[["ay","cx","more loss of H⁺"],["ay","ox","less loss of H⁺"]]},
+{t:"Inductive Effect on Acidity",ty:"Flowchart",p:"More Cl atoms → stronger acid (pKa decreases).",src:"Table 4; Resonance and Inductive effect (p.5)",s:1,
+n:N("ie","Acetic acid · pKa 4.74","s","CH₃COOH, Ka 1.75×10⁻⁵",[
+ N("ie1","Chloroacetic · 2.82","s","ClCH₂COOH, Ka 136×10⁻⁵"),
+ N("ie2","Dichloroacetic · 1.30","s","Cl₂CHCOOH, Ka 5530×10⁻⁵"),
+ N("ie3","Trichloroacetic · 0.7","w","Cl₃CCOOH, Ka 23200×10⁻⁵. Stronger than dichloro- and chloroacetic acid.")]),
+c:[["ie","ie1","+ Cl"],["ie1","ie2","+ Cl"],["ie2","ie3","+ Cl"]]},
+{t:"Preparation of Carboxylic Acids",ty:"Concept Map",p:"Five routes that converge on R–COOH.",src:"Preparation of Carboxylic acid (pp.5–6)",
+n:N("pr","Carboxylic acid R–COOH","m","Product of all routes shown.",[
+ N("p1","Alkene","b","Ozonolysis: O₃, then H₂O₂.",[N("p1a","Ketone","w","No oxidation."),N("p1b","Aldehyde","r","Oxidation → acid.")]),
+ N("p2","Alkyl halide R–X","b","Mg → RMgX; then 1. CO₂, 2. H₃O⁺.",[N("p2a","Grignard RMgX","r","Example: 1-chloropropane → CH₃CH₂CH₂MgCl → butanoic acid.")]),
+ N("p3","Nitrile R–C≡N","b","H₃O⁺ / heat (hydrolysis), or NaOH/H⁺.",[N("p3a","From R–X + CN⁻","r","1-chloropropane + CN⁻ → CH₃CH₂CH₂CN.")]),
+ N("p4","Primary alcohol R–CH₂OH","b","Strong oxidant (KMnO₄) → acid; weak oxidant (PCC) → aldehyde, then oxidation.",[N("p4a","Example","r","Propene → propanol (H₂O/H₂O₂) → propanal (PCC) → propionic acid (KMnO₄).")]),
+ N("p5","Ar–CHR₂","b","Oxidation → Ar–COOH.")]),c:[]},
+{t:"Benzoic Acid from Benzene",ty:"Comparison Diagram",p:"Two routes; tert-butylbenzene does not react.",src:"Preparation of Benzoic acid (p.7)",
+n:N("bz","Benzoic acid","m","Prepared from benzene by two methods.",[
+ N("m1","1. KMnO₄ oxidation of aliphatic chain","b","Benzene + CH₃Cl/AlCl₃ → toluene → KMnO₄ → benzoic acid.",[N("m1a","Toluene, ethylbenzene, cumene","r","With KMnO₄ give benzoic acid."),N("m1b","tert-Butylbenzene","w","KMnO₄: NO reaction.")]),
+ N("m2","2. Grignard reagent","b","Benzene + Cl₂/FeCl₃ → chlorobenzene → Mg → MgCl-benzene → 1. CO₂, 2. H⁺ → benzoic acid.")]),c:[]},
+{t:"Reactions of Carboxylic Acids",ty:"Classification Tree",p:"Derivatives formed from R–COOH, with reagents.",src:"Derivatives of Carboxylic acids; Reduction (p.8)",
+n:N("rx","Carboxylic acid","m","R–COOH",[
+ N("r1","Acid halide","b","SOCl₂ / base.",[N("r1a","Also","r","PCl₅, PCl₃ (p.13).")]),
+ N("r2","Acid anhydride","b","RCO₂H, heat."),
+ N("r3","Ester","b","R′OH, H⁺ / heat (substitution reaction)."),
+ N("r4","Amide","b","R₂NH, heat."),
+ N("r5","Acid salt","b","Base such as NaOH, + H₂O (neutralization reaction).",[N("r5a","Example","r","CH₃COOH + NaOH → CH₃COONa + H₂O.")]),
+ N("r6","Primary alcohol","s","LAH then H⁺. Aldehyde is the initial product, then alkoxide anion, then protonation. Both carbonyl groups reduced.",[N("r6a","Oxalic acid → ethylene glycol","r","With LAH.")])]),c:[]},
+{t:"Interconversion of Derivatives",ty:"Concept Map",p:"What acid chlorides, anhydrides, esters and amides give.",src:"Acid Halides, Anhydrides, Esters, Amides (pp.12–18)",
+n:N("ic","Derivative reactivity","m","Acid chlorides react rapidly with most nucleophiles.",[
+ N("d1","Acid chloride","b","+ H₂O → acid; + EtOH → ester; + NH₃ → amide; + acid → anhydride (each + HCl).",[N("d1x","Odor","w","Irritating; benzoyl chloride is a lachrymator (tear gas).")]),
+ N("d2","Anhydride","b","+ H₂O → acid; + ROH → ester; + NH₃ → amide (each + one acid).",[N("d2x","Aspirin","r","Salicylic acid + acetic anhydride → 2-acetoxybenzoic acid.")]),
+ N("d3","Ester","b","+ NH₃ (dry ether) → amide; LiAlH₄ → primary alcohol + R′OH; Grignard → tert-alcohol."),
+ N("d4","Amide","b","Hydrolysis (H⁺/OH⁻, slow, prolonged heating) → acid + NH₃; LiAlH₄ → amine.",[N("d4x","Unreactive","w","Because of resonance.")])]),c:[]},
+{t:"Di-acids on Heating",ty:"Comparison Diagram",p:"Which diacids form cyclic anhydrides.",src:"Di Acids (p.15)",
+n:N("da","Heat","m","Behaviour of di-acids.",[
+ N("h1","Maleic (cis) 135°C","r","→ maleic anhydride + H₂O."),
+ N("h2","Fumaric (trans)","w","NO reaction at 135°C."),
+ N("h3","Phthalic acid","r","→ phthalic anhydride."),
+ N("h4","Isophthalic acid","w","NO reaction."),
+ N("h5","Terephthalic acid","w","NO reaction.")]),c:[]},
+{t:"Amides and Cyclic Derivatives",ty:"Classification Tree",p:"Amide classes, boiling points, lactones and lactams.",src:"Amides (pp.16–18); Lactones (p.11)",
+n:N("ad","Amide / cyclic","m","",[
+ N("a1","1° amide","b","R–CO–NH₂"),N("a2","2° amide","b","R–CO–NHR"),N("a3","3° amide","b","R–CO–NR₂",[N("a3x","N-alkylation","w","Lowers b.p./m.p. (less H-bonding): formamide 210 → DMF 153; acetamide 222 → DMA 165 °C.")]),
+ N("l1","Lactone (cyclic ester)","b","γ- and β-lactones."),N("l2","Lactam (cyclic amide)","b","γ- and β-lactams."),
+ N("ny","Nylon","r","Diacid chloride (adipoyl chloride) + diamine (hexamethylene diamine) → polyamide.")]),c:[]}
+];
+
+function buildDg(dg,idx){
+ const W=168,H=58,HG=18,VG=62,PAD=16,all={},cn=[...dg.c];let z=1,selId=null;
+ const w=(n,r)=>{all[n.i]=n;n.c.forEach(c=>{if(!(r&&dg.s))cn.push([n.i,c.i,"includes"]);w(c,0)})};w(dg.n,1);
+ const card=E("div","card dg");
+ card.innerHTML="<div class='dh'><h3>"+String(idx+1).padStart(2,"0")+" · "+dg.t+"</h3><span class='bdg'>"+dg.ty+"</span></div><p class='pp'>"+dg.p+"</p>";
+ const bar=E("div","bar2"),stage=E("div","cv"),dt=E("div","dt","Tap an item to read its details.");
+ const msg=dt.innerHTML,zl=E("span","zl","100%");
+ const cb=(t,f,c)=>{const b=E("button",c||"chip",t);b.onclick=f;bar.append(b)};
+ const setZ=v=>{z=Math.max(.5,Math.min(1.6,v));zl.textContent=Math.round(z*100)+"%";draw()};
+ cb("−",()=>setZ(z-.15),"chip rnd");bar.append(zl);cb("+",()=>setZ(z+.15),"chip rnd");
+ cb("Reset view",()=>{Object.values(all).forEach(n=>n.cl=0);selId=null;dt.innerHTML=msg;setZ(1);stage.scrollTo(0,0)});
+ cb("Collapse all",()=>{Object.values(all).forEach(n=>{if(n.c.length&&n!==dg.n)n.cl=1});draw()});
+ cb("Expand all",()=>{Object.values(all).forEach(n=>n.cl=0);draw()});
+ bar.append(E("span","hint","Tap a node for details · scroll sideways to pan"));
+ const nb=(n,x,y)=>{const b=E("button","nd r-"+n.k,"");b.textContent=n.l;b.title=n.d;b.dataset.i=n.i;b.style.cssText="left:"+x+"px;top:"+y+"px;width:"+W+"px;height:"+H+"px";b.onclick=()=>sel(n.i);return b};
+ function draw(){
+  const pos={},ed=[];let maxD=0,width=W;
+  if(dg.s){pos[dg.n.i]={x:0,y:0,n:dg.n};maxD=dg.n.c.length;let pv=dg.n;dg.n.c.forEach((n,i)=>{pos[n.i]={x:0,y:(i+1)*(H+VG),n};const c=cn.find(q=>q[0]==pv.i&&q[1]==n.i);ed.push([pv,n,c?c[2]:""]);pv=n})}
+  else{const wd=n=>{n._w=(n.cl||!n.c.length)?W:Math.max(W,n.c.reduce((a,c)=>a+wd(c),0)+HG*(n.c.length-1));return n._w};wd(dg.n);width=dg.n._w;
+   const pl=(n,x,d)=>{pos[n.i]={x:x+(n._w-W)/2,y:d*(H+VG),n};maxD=Math.max(maxD,d);if(!n.cl&&n.c.length){let cx=x;n.c.forEach(c=>{ed.push([n,c,""]);pl(c,cx,d+1);cx+=c._w+HG})}};pl(dg.n,0,0)}
+  const cw=width+PAD*2,ch=maxD*(H+VG)+H+PAD*2+12;
+  const wr=E("div","cvw"),iv=E("div","cvi");wr.style.cssText="width:"+cw*z+"px;height:"+ch*z+"px";iv.style.cssText="width:"+cw+"px;height:"+ch+"px;transform:scale("+z+")";
+  const mk="ar"+idx;let sv="<svg width='"+cw+"' height='"+ch+"'><defs><marker id='"+mk+"' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M1 1L9 5L1 9' fill='none' stroke='#9a93bd' stroke-width='1.6'/></marker></defs>";
+  ed.forEach(e=>{const a=pos[e[0].i],b=pos[e[1].i],x1=a.x+W/2+PAD,y1=a.y+H+PAD,x2=b.x+W/2+PAD,y2=b.y+PAD,m=(y2-y1)/2;
+   sv+="<path d='"+(dg.s?"M"+x1+" "+y1+"L"+x2+" "+(y2-2):"M"+x1+" "+y1+"C"+x1+" "+(y1+m)+" "+x2+" "+(y2-m)+" "+x2+" "+(y2-2))+"' fill='none' stroke='#9a93bd' stroke-width='1.6' marker-end='url(#"+mk+")'/>";
+   if(e[2])sv+="<text x='"+(x1+10)+"' y='"+(y1+m+4)+"' font-size='11.5' fill='#6a647a'>"+e[2]+"</text>"});
+  iv.innerHTML=sv+"</svg>";
+  Object.values(pos).forEach(q=>{iv.append(nb(q.n,q.x+PAD,q.y+PAD));
+   if(!dg.s&&q.n.c.length){const t=E("button","tgc",q.n.cl?"+":"−");t.setAttribute("aria-label","Expand or collapse "+q.n.l);t.style.cssText="left:"+(q.x+PAD+W/2-10)+"px;top:"+(q.y+PAD+H-10)+"px";t.onclick=()=>{q.n.cl=q.n.cl?0:1;draw()};iv.append(t)}});
+  wr.append(iv);const sx=stage.scrollLeft,sy=stage.scrollTop;stage.innerHTML="";stage.append(wr);stage.scrollLeft=sx;stage.scrollTop=sy;mark()}
+ function mark(){stage.querySelectorAll(".nd").forEach(b=>{const i=b.dataset.i;b.classList.toggle("on",i==selId);b.classList.toggle("rel",selId!=null&&cn.some(c=>(c[0]==selId&&c[1]==i)||(c[1]==selId&&c[0]==i)))})}
+ function sel(id){selId=id;mark();const n=all[id];let h="<b>"+n.l+"</b><p>"+n.d+"</p>";if(n.x.length)h+="<ul>"+n.x.map(x=>"<li>"+x+"</li>").join("")+"</ul>";dt.innerHTML=h;
+  const rs=cn.filter(c=>c[0]==id||c[1]==id);if(rs.length){const d=E("div","rl","<small>Relationships:</small>");rs.forEach(c=>{const o=c[0]==id?c[1]:c[0],b=E("button","chip",(c[0]==id?"→ ":"← ")+all[o].l+" · "+c[2]);b.onclick=()=>sel(o);d.append(b)});dt.append(d)}}
+ const lg=E("div","lg","<span><i class='r-m'></i>Main concept</span><span><i class='r-b'></i>Branch / group</span><span><i class='r-s'></i>Stage / event</span><span><i class='r-r'></i>Item / outcome</span><span><i class='r-w'></i>Risk / warning</span>");
+ draw();card.append(bar,stage,lg,dt,E("p","src","Source: "+dg.src));return card}
+DG.forEach((d,i)=>$("#dgs").append(buildDg(d,i)));
+
+// mini map (hierarchical, collapsible)
+const T=(a,d,r,k)=>({a,d,r,k:k||[]});
+const MM=T("Carboxylic Acids and their Derivatives","","",[
+T("Carbonyl-containing compounds","Five carbonyl families","classified into",[
+ T("Carboxylic acid","R–COOH"),
+ T("Ester","R–COOR′"),
+ T("Amide","R–CONH₂"),
+ T("Acid halide","R–COX; X = Cl, Br"),
+ T("Acid anhydride","R–CO–O–CO–R")]),
+T("Aliphatic carboxylic acids","Table 1: common name → IUPAC name","contains",[
+ T("Straight-chain acids (C1–C6)","","includes",[
+  T("C1 · HCOOH","Formic = methanoic acid"),
+  T("C2 · CH₃COOH","Acetic = ethanoic acid"),
+  T("C3 · CH₃CH₂COOH","Propionic = propanoic acid"),
+  T("C4 · CH₃CH₂CH₂COOH","Butyric = butanoic acid"),
+  T("C5 · CH₃CH₂CH₂CH₂COOH","Valeric = pentanoic acid"),
+  T("C6 · CH₃CH₂CH₂CH₂CH₂COOH","Caproic = hexanoic acid")]),
+ T("Substituted examples","IUPAC naming","e.g.",[
+  T("3-Bromobutanoic acid"),T("3,4-Dichloropentanoic acid"),T("2-Ethylbutanoic acid"),T("4-Chlorobenzoic acid")])]),
+T("Di acids","Aliphatic di carboxylic acid: suffix –dioic acid (IUPAC); common names based on natural source","contains",[
+ T("Aliphatic di acids (Table 2)","","includes",[
+  T("Oxalic acid","HOOC–COOH · ethanedioic acid"),
+  T("Malonic acid","HOOC–CH₂–COOH · propanedioic acid"),
+  T("Succinic acid","HOOC–(CH₂)₂–COOH · butanedioic acid"),
+  T("Glutaric acid","HOOC–(CH₂)₃–COOH · pentanedioic acid"),
+  T("Adipic acid","HOOC–(CH₂)₄–COOH · hexanedioic acid"),
+  T("Pimelic acid","HOOC–(CH₂)₅–COOH · heptanedioic acid")]),
+ T("Unsaturated di acids","Take –dioic acid suffix","e.g.",[
+  T("2-Butenedioic acid","HOOC–CH=CH–COOH"),T("2-Butynedioic acid","HOOC–C≡C–COOH")]),
+ T("Adipic acid","Most important commercial di acid; used to manufacture nylon"),
+ T("Maleic & fumaric acids","Two-butene dioic acids; historic role in discovery of cis-trans isomerism","includes",[
+  T("Maleic acid","cis-2-Butenedioic acid"),T("Fumaric acid","trans-2-Butenedioic acid")]),
+ T("Benzene di carboxylic acids","Generally known by common names","includes",[
+  T("Phthalic acid"),T("Isophthalic acid"),T("Terephthalic acid")])]),
+T("Physical properties","Three properties","contains",[
+ T("Hydrogen bonding","Table 3"),
+ T("Solubility in water (lower acids)","Table 3"),
+ T("Acidity","Table 4 — see Acidity branch"),
+ T("Table 3: b.p · m.p · solubility","Solubility: g / 100 g H₂O at 25 °C","includes",[
+  T("Formic acid","b.p 100.5 °C · m.p 8 °C · ∞"),
+  T("Acetic acid","b.p 118 °C · m.p 16.6 °C · ∞"),
+  T("Propanoic acid","b.p 141 °C · m.p −22 °C · ∞"),
+  T("Butanoic acid","b.p 164 °C · m.p −8 °C · ∞"),
+  T("Pentanoic acid","b.p 187 °C · m.p −34 °C · 3.7"),
+  T("Hexanoic acid","b.p 205 °C · m.p −1.5 °C · 1.0")])]),
+T("Acidity of carboxylic acids","","contains",[
+ T("Acid strength","Weaker than inorganic acids (e.g. HCl); much stronger than most other hydrocarbon types","includes",[
+  T("Carboxylic acids: pKa 4–5"),
+  T("Inorganic acids: negative pKa"),
+  T("Alcohols: pKa ≈ 15–16","Alcohols, ketones, alkynes = much weaker acids")]),
+ T("Ionization","Carboxylic acids & alcohols = Brønsted–Lowry acids → H⁺ + anionic conjugate base","",[
+  T("Negative charge on oxygen in both bases")]),
+ T("Carboxylate vs alkoxide","Carboxylate more stable (weaker base) than alkoxide","leads to",[
+  T("Carboxylate","Electrons delocalized over both O atoms: resonance stabilized"),
+  T("Alkoxide","Localized: not resonance stabilized"),
+  T("Delocalization ↑ stability"),
+  T("↑ Anion stability","Equilibrium shifts → more anion → ↑ H⁺ (acidity)")]),
+ T("Table 4: ionization constants","Ka · pKa","includes",[
+  T("Formic acid","Ka 17.7 × 10⁻⁵ · pKa 3.68"),
+  T("Acetic acid","Ka 1.75 × 10⁻⁵ · pKa 4.74"),
+  T("Propionic acid","Ka 1.4 × 10⁻⁵ · pKa 4.85"),
+  T("Butyric acid","Ka 1.6 × 10⁻⁵ · pKa 4.80"),
+  T("Chloroacetic acid","Ka 136 × 10⁻⁵ · pKa 2.82"),
+  T("Dichloroacetic acid","Ka 5530 × 10⁻⁵ · pKa 1.30"),
+  T("Trichloroacetic acid","Ka 23200 × 10⁻⁵ · pKa 0.7")]),
+ T("Resonance and inductive effect","Trichloroacetic acid stronger than dichloroacetic and chloroacetic acid","",[
+  T("Anions compared","CH₃COO⁻ · ClCH₂COO⁻ · Cl₂CHCOO⁻ · Cl₃CCOO⁻"),
+  T("Strongest","Trichloroacetic acid (pKa 0.7)")])]),
+T("Preparation of carboxylic acids","Five routes converge on R–COOH","includes",[
+ T("Ozonolysis of alkenes","1. O₃, then H₂O₂","leads to",[
+  T("Aldehyde","Oxidation → acid"),
+  T("Ketone","No oxidation"),
+  T("Example","cis-2-Butene → acetaldehyde → acetic acid")]),
+ T("Grignard reagent + CO₂","R–X + Mg → RMgX; then 1. CO₂, 2. H₃O⁺","",[
+  T("Example","1-Chloropropane → CH₃CH₂CH₂MgCl → CH₃CH₂CH₂COOH")]),
+ T("Hydrolysis of nitriles","R–C≡N + H₃O⁺, heat","",[
+  T("Alternative conditions","NaOH / H⁺"),
+  T("Example","1-Chloropropane + CN⁻ → CH₃CH₂CH₂CN → CH₃CH₂CH₂COOH")]),
+ T("Oxidation of primary alcohols","R–CH₂OH","",[
+  T("Strong oxidant (KMnO₄)","→ carboxylic acid"),
+  T("Weak oxidant (PCC)","→ aldehyde R–CHO → oxidation → acid"),
+  T("Example","Propene → propanol → propanal → propionic acid")]),
+ T("Oxidation of alkylbenzenes","Ar–CHR₂ → Ar–COOH"),
+ T("Benzoic acid from benzene","Two methods","divided into",[
+  T("Method 1: KMnO₄ oxidation of chain","Benzene → CH₃Cl / AlCl₃ → toluene → KMnO₄"),
+  T("Substrates oxidized","Toluene, ethylbenzene, cumene → benzoic acid"),
+  T("tert-Butylbenzene","No reaction with KMnO₄"),
+  T("Method 2: Grignard reagent","Benzene → Cl₂ / FeCl₃ → chlorobenzene → Mg → 1. CO₂, 2. H⁺")])]),
+T("Reduction of carboxylic acids","LAH: 1. LAH, 2. H⁺ → primary alcohol","leads to",[
+ T("Mechanism steps","","followed by",[
+  T("Aldehyde","Initial reduction product"),
+  T("Alkoxide anion","Aldehyde is subsequently reduced"),
+  T("Primary alcohol","Alkoxide protonated (second step)")]),
+ T("Acetic acid → ethanol","Primary alcohol"),
+ T("Oxalic acid → ethylene glycol","Both carbonyl groups are reduced")]),
+T("Derivatives of carboxylic acids","Formation from R–COOH","includes",[
+ T("Acid halide","SOCl₂, base → R–COCl"),
+ T("Acid anhydride","RCO₂H, heat"),
+ T("Ester","R′OH, H⁺ / heat → R–COOR′"),
+ T("Amide","R₂NH, heat → R–CONR₂"),
+ T("Acid salt","Base (e.g. NaOH) → R–COO⁻ Na⁺ + H₂O"),
+ T("Reaction types","","includes",[
+  T("Neutralization","CH₃COOH + NaOH → CH₃COONa + H₂O"),
+  T("Substitution","Butanoic acid + propanol → propyl butanoate")])]),
+T("Esters","Acid with OH replaced by OR","contains",[
+ T("Naming rule","R of OR named first, then acid name with –ic → –ate (analogous to acid salts)"),
+ T("Examples with b.p","","e.g.",[
+  T("Methyl acetate","Methyl ethanoate · b.p 57 °C"),
+  T("Ethyl acetate","Ethyl ethanoate · b.p 77 °C"),
+  T("Methyl butyrate","Methyl butanoate · b.p 102 °C")]),
+ T("Pair with R and R′ interchanged","Different names","e.g.",[
+  T("Phenyl acetate","b.p 195.7 °C"),
+  T("Methyl benzoate","b.p 196.8 °C"),
+  T("Sodium benzoate","Acid salt example")]),
+ T("Nomenclature examples","","e.g.",[
+  T("Ethyl 2-chloro-3-oxobutanoate"),
+  T("Isopropyl 4-hydroxy-3,5-dimethylhexanoate"),
+  T("Methyl 2-butenoate"),
+  T("Phenyl 3-oxobutanoate"),
+  T("Ethyl 2-pentynoate"),
+  T("Dimethyl malonate"),
+  T("tert-Butyl cyclohexanecarboxylate")]),
+ T("Formation of esters","Acid + alcohol → ester + H₂O","e.g.",[
+  T("Acetic acid + ethanol","→ ethyl ethanoate"),
+  T("Propanoic acid + methanol","→ methyl propanoate")]),
+ T("Smelly stuff (odors)","","e.g.",[
+  T("Methyl butanoate","Apple"),
+  T("O-Methyl butanethioate","Strawberries"),
+  T("Ethyl butanoate","Pineapples"),
+  T("Pentyl butanoate","Apricots")]),
+ T("Lactones (cyclic esters)","","divided into",[
+  T("γ-Lactone"),T("β-Lactone")]),
+ T("Lactam (cyclic amide)","","divided into",[
+  T("γ-Lactam"),T("β-Lactam")]),
+ T("Reactions of esters","","includes",[
+  T("Ammonolysis","NH₃, dry ether → amide + R′OH (e.g. methyl benzoate → benzamide; formic acid → formamide)"),
+  T("Reduction","LiAlH₄, ether → primary alcohol RCH₂OH + R′OH"),
+  T("Grignard reagent (R″MgX)","→ tert-alcohol")])]),
+T("Acid halides","Prepared from acids + thionyl chloride or phosphorus halides","contains",[
+ T("Acid chlorides: preparation","","",[
+  T("Acetic acid + PCl₅","→ acetyl chloride (ethanoyl chloride)"),
+  T("Benzoic acid + PCl₃ / PCl₅ / SOCl₂","→ benzoyl chloride (BZCl)")]),
+ T("Reactions of acid chlorides","React rapidly with most nucleophiles (water, alcohols, ammonia)","includes",[
+  T("Acetyl chloride + H₂O","→ acetic acid + HCl"),
+  T("Acetyl chloride + EtOH","→ ethyl acetate + HCl"),
+  T("Acetyl chloride + NH₃","→ acetamide + HCl"),
+  T("Acetyl chloride + acetic acid","→ acetic anhydride + HCl")]),
+ T("Properties","","",[
+  T("Acyl halides: irritating odors"),
+  T("Benzoyl chloride","Lachrymator (tear gas)")])]),
+T("Acid anhydrides","Formed from two acids with loss of water","contains",[
+ T("Formation","2 CH₃COOH, H⁺, heat → acetic anhydride + H₂O"),
+ T("Nomenclature","","e.g.",[
+  T("Benzoic anhydride"),T("Acetic anhydride"),T("Acetic benzoic anhydride","Mixed anhydride")]),
+ T("Preparation of mixed anhydride","","followed by",[
+  T("Acetic acid + NaOH","→ acetate anion"),
+  T("Benzoic acid + PCl₃","→ benzoyl chloride"),
+  T("Acetate + benzoyl chloride","→ acetic benzoic anhydride")]),
+ T("Di acids and heat","","includes",[
+  T("Maleic acid","135 °C → maleic anhydride + H₂O"),
+  T("Fumaric acid","135 °C → no reaction"),
+  T("Phthalic acid","Heat → phthalic anhydride"),
+  T("Isophthalic acid","Heat → no reaction"),
+  T("Terephthalic acid","Heat → no reaction")]),
+ T("Nucleophilic substitution","Acetic anhydride +","includes",[
+  T("H₂O","→ acid + acid"),
+  T("RO–H","→ ester + acid"),
+  T("NH₃","→ amide + acid")]),
+ T("Example: aspirin","Salicylic acid (2-hydroxybenzoic acid) + acetic anhydride → 2-acetoxybenzoic acid = acetyl salicylic acid = Aspirin")]),
+T("Amides","","contains",[
+ T("Nomenclature","Similar to carboxylic acid: drop –oic acid ending, replace with –amide","e.g.",[
+  T("Propionamide","Propanamide"),T("Benzamide"),T("Cyclopentanecarboxamide"),T("N,N-Dimethylcyclohexanecarboxamide")]),
+ T("Classes","","divided into",[
+  T("Primary amide (1°)","R–CO–NH₂"),T("Secondary amide (2°)","R–CO–NHR"),T("Tertiary amide (3°)","R–CO–NR₂")]),
+ T("Properties","Exceptionally high b.p for molecular weight; alkyl substitution on N lowers b.p and m.p (less H-bonding)","e.g.",[
+  T("Formamide","b.p 210 °C"),
+  T("N,N-Dimethylformamide","b.p 153 °C"),
+  T("Acetamide","b.p 222 °C"),
+  T("N,N-Dimethylacetamide","b.p 165 °C")]),
+ T("Preparation","","includes",[
+  T("From carboxylic acid","NH₃, heat"),
+  T("From acid chloride","NH₃, heat (e.g. benzoyl chloride → benzamide)")]),
+ T("Polyamide (nylon)","Diamine + diacid chloride → polymer with amide bonds","e.g.",[
+  T("Nylon","Adipoyl chloride + hexamethylene diamine → polyamide nylon")]),
+ T("Low reactivity","Amide is not reactive because of resonance (carbonyl + amine)"),
+ T("Reactions of amides","","includes",[
+  T("Hydrolysis","H⁺ / OH⁻, H₂O → acid + NH₃; slow, needs prolonged heating or acid / base catalyst"),
+  T("Reduction","LiAlH₄, ether → amine RCH₂NH₂; excellent way to make primary amines")])]),
+T("Some significant examples","Clinical / practical significance","includes",[
+ T("Analgesics","Painkillers"),
+ T("Antipyretics","Fever reducers"),
+ T("Aspirin","2-Acetoxybenzoic acid = acetyl salicylic acid"),
+ T("Acetaminophen","Tylenol")])
+]);
+function mk(n,lv){const li=document.createElement("li");li.className="l"+lv+(n.k.length?"":" lf");const b=E("button","nb"+(lv<3?" p":""));b.innerHTML=(n.k.length?'<span class="ar">▸</span>':'<span class="ar">•</span>')+"<span>"+n.a+"</span>"+(n.r?'<span class="rel">'+n.r+"</span>":"");li.append(b);if(n.d)li.append(E("div","dt",n.d));if(n.k.length){const u=document.createElement("ul");n.k.forEach(c=>u.append(mk(c,lv+1)));li.append(u);b.onclick=()=>li.classList.toggle("open")}return li}
+const mu=document.createElement("ul");const mr=mk(MM,1);mr.classList.add("open");mu.append(mr);$("#mm").append(mu);
+const setAll=o=>$("#mm").querySelectorAll("li").forEach(x=>{if(x.querySelector(":scope>ul"))x.classList.toggle("open",o||x.classList.contains("l1"))});
+$("#mxa").onclick=()=>setAll(true);$("#mca").onclick=()=>setAll(false);
+[["R–COOH + SOCl₂ (base)","gives","acid halide"],["R–COOH + RCO₂H (heat)","gives","acid anhydride"],["R–COOH + R′OH (H⁺ / heat)","gives","ester"],["R–COOH + R₂NH (heat)","gives","amide"],["R–COOH + base (NaOH)","gives","acid salt + H₂O (neutralization)"],["Carboxylate anion","resonance-stabilized (delocalized) → more stable than","alkoxide → acids stronger than alcohols"],["Trichloroacetic acid","is stronger than","dichloroacetic and chloroacetic acid"],["Alkene (ozonolysis)","leads to","aldehyde → oxidation → acid; ketone → no oxidation"],["R–X + Mg → RMgX","then CO₂ / H₃O⁺ gives","carboxylic acid"],["Nitrile (H₃O⁺, heat)","hydrolysis gives","carboxylic acid"],["Primary alcohol + KMnO₄","gives","carboxylic acid"],["Primary alcohol + PCC","gives","aldehyde → oxidation → acid"],["Toluene / ethylbenzene / cumene + KMnO₄","give","benzoic acid (tert-butylbenzene: no reaction)"],["Carboxylic acid + LAH","reduced to","primary alcohol (via aldehyde → alkoxide)"],["Oxalic acid + LAH","gives","ethylene glycol"],["Ester + NH₃","ammonolysis gives","amide + R′OH"],["Ester + LiAlH₄","reduction gives","primary alcohol + R′OH"],["Ester + Grignard reagent","gives","tert-alcohol"],["Acid chloride + H₂O / EtOH / NH₃","gives","acid / ester / amide + HCl"],["Acid anhydride + H₂O / ROH / NH₃","gives","acid / ester / amide + acid"],["Salicylic acid + acetic anhydride","gives","aspirin"],["Maleic acid (135 °C)","forms","maleic anhydride; fumaric acid: no reaction"],["Phthalic acid (heat)","forms","phthalic anhydride; iso- and terephthalic: no reaction"],["Alkyl substitution on amide N","lowers b.p / m.p by","decreasing H-bonding"],["Amide","unreactive because of","resonance"],["Amide + H₂O (H⁺ / OH⁻)","hydrolysis gives","acid + NH₃"],["Amide + LiAlH₄","reduction gives","amine"],["Adipoyl chloride + hexamethylene diamine","form","polyamide nylon"],["Adipic acid","used to manufacture","nylon"]].forEach(r=>$("#mr").append(E("div","","<b>"+r[0]+"</b> <i>→ "+r[1]+" →</i> "+r[2])));
+// levels
+const LV=[["Level 1","Easy"],["Level 2","Medium"],["Level 3","Hard"]];
+const F=[[["Name the five carbonyl-containing families in Lecture 1 and give the general formula of each.", "• Carboxylic acid: R–COOH\n• Ester: R–COOR′\n• Amide: R–CONH₂\n• Acid halide: R–COX (X = Cl, Br)\n• Acid anhydride: R–CO–O–CO–R", "All five contain a carbonyl group; the lecture then treats the esters, amides, acid halides and anhydrides as derivatives of the carboxylic acid.", 1], ["Give the IUPAC names of formic acid (HCOOH) and acetic acid (CH₃COOH).", "• Formic acid = methanoic acid\n• Acetic acid = ethanoic acid", "These are the one- and two-carbon members of Table 1 (aliphatic carboxylic acids).", 2], ["Match each common name with its IUPAC name: propionic, butyric, valeric and caproic acid.", "• Propionic acid = propanoic acid (CH₃CH₂COOH)\n• Butyric acid = butanoic acid (CH₃CH₂CH₂COOH)\n• Valeric acid = pentanoic acid\n• Caproic acid = hexanoic acid", "Table 1 pairs each aliphatic acid (C1–C6) with a common name and an IUPAC name.", 3], ["Which suffix does the IUPAC system give to an aliphatic di carboxylic acid? Give two unsaturated examples.", "• Suffix: –dioic acid\n• 2-Butenedioic acid: HOOC–CH=CH–COOH\n• 2-Butynedioic acid: HOOC–C≡C–COOH", "The suffix also applies to unsaturated chains; the position of the double or triple bond is given as a number.", 4], ["Give the IUPAC name of each aliphatic di acid in Table 2: oxalic, malonic, succinic, glutaric, adipic and pimelic acid.", "• Oxalic = ethanedioic acid\n• Malonic = propanedioic acid\n• Succinic = butanedioic acid\n• Glutaric = pentanedioic acid\n• Adipic = hexanedioic acid\n• Pimelic = heptanedioic acid", "Many di acids occur in nature and keep common names that are based on their source.", 5], ["Which di acid is the most important commercial compound of this group, and what is it used for?", "Adipic acid (hexanedioic acid), used to manufacture nylon.", "Nylon is shown later in the lecture as a polyamide built with amide bonds.", 6], ["Why are maleic acid and fumaric acid historically important? Which is cis and which is trans?", "• They played a historic role in the discovery of cis-trans isomerism\n• Maleic acid = cis-2-butenedioic acid\n• Fumaric acid = trans-2-butenedioic acid", "Both are the two-butene dioic acids and are usually known by their common names.", 7], ["Name the three benzene di carboxylic acids.", "Phthalic acid, isophthalic acid and terephthalic acid.", "They are generally known by their common names; all three reappear later when di acids are heated.", 8], ["List the three physical properties of carboxylic acids discussed in the lecture and the table that covers each.", "• Hydrogen bonding: Table 3\n• Solubility in water (lower acids): Table 3\n• Acidity: Table 4", "Table 3 gives b.p, m.p and solubility; Table 4 gives the ionization constants (Ka, pKa).", 9], ["In Table 3, which acids are infinitely soluble in water at 25 °C, and what are the solubilities of pentanoic and hexanoic acid?", "• Formic, acetic, propanoic and butanoic acid: ∞\n• Pentanoic acid: 3.7 g / 100 g H₂O\n• Hexanoic acid: 1.0 g / 100 g H₂O", "Solubility in water is listed for the lower acids, and the table shows it falling from ∞ to 3.7 and 1.0.", 10], ["What are the boiling points of formic acid and hexanoic acid in Table 3?", "• Formic acid: 100.5 °C\n• Hexanoic acid: 205 °C", "Across Table 3 the b.p rises from formic acid (100.5 °C) through acetic (118), propanoic (141), butanoic (164) and pentanoic (187) to hexanoic acid (205).", 11], ["What typical pKa values do carboxylic acids, inorganic acids and alcohols have?", "• Carboxylic acids: pKa 4 to 5\n• Inorganic acids: negative pKa\n• Alcohols: pKa about 15 to 16", "Lower pKa = stronger acid; carboxylic acids sit between inorganic acids and alcohols.", 12], ["Which anion is more stable (the weaker base): carboxylate or alkoxide? Give one reason.", "• The carboxylate anion\n• Its electrons can be delocalized over both oxygen atoms (resonance)", "The alkoxide charge is localized on one oxygen (not resonance stabilized).", 13], ["Among chloroacetic, dichloroacetic and trichloroacetic acid, which is the strongest acid?", "Trichloroacetic acid (Cl₃CCOOH): Ka 23200 × 10⁻⁵, pKa 0.7.", "The lecture states it is stronger than dichloroacetic and chloroacetic acid.", 14], ["Which reagent reduces a carboxylic acid to a primary alcohol? What does acetic acid give?", "LAH (lithium aluminum hydride; 1. LAH, 2. H⁺). Acetic acid gives ethanol, a primary alcohol.", "The initial product is an aldehyde, which is reduced to an alkoxide anion and then protonated.", 15], ["In the oxidation of R–CH₂OH, which oxidizing agent goes all the way to the carboxylic acid and which stops at the aldehyde?", "• Strong oxidizing agent such as KMnO₄: carboxylic acid\n• Weak oxidizing agent such as PCC: aldehyde (R–CHO)", "The aldehyde can then be oxidized further to the acid.", 16], ["Outline the Grignard route to a carboxylic acid starting from R–X.", "• R–X + Mg → RMgX\n• 1. CO₂, then 2. H₃O⁺\n• Product: R–COOH", "The same sequence is applied to chlorobenzene to make benzoic acid.", 17], ["Which reagents convert a carboxylic acid into an acid halide, and what is notable about the odor of acyl halides?", "• Thionyl chloride (SOCl₂, with base) or phosphorus halides (PCl₃, PCl₅)\n• Acyl halides have irritating odors\n• Benzoyl chloride is a lachrymator (tear gas)", "Acetic acid + PCl₅ → acetyl chloride; benzoic acid + PCl₃, PCl₅ or SOCl₂ → benzoyl chloride.", 18], ["How are esters related to carboxylic acids, and how are they named?", "• Derived from acids by replacing OH with OR\n• Name the R of the OR group first, then the acid name with –ic changed to –ate", "Esters are named in a manner analogous to carboxylic acid salts.", 19], ["Match each ester with its odor: methyl butanoate, O-methyl butanethioate, ethyl butanoate, pentyl butanoate.", "• Methyl butanoate: apple\n• O-Methyl butanethioate: strawberries\n• Ethyl butanoate: pineapples\n• Pentyl butanoate: apricots", "These examples come from the 'Smelly Stuff' section.", 20], ["What is a lactone and what is a lactam?", "• Lactone: cyclic ester\n• Lactam: cyclic amide", "The lecture shows γ- and β-lactones and γ- and β-lactams; the Greek letters label the carbons of the ring.", 21], ["How are acid anhydrides formed? Give the acetic acid example.", "From the combination of two acids with loss of water: 2 CH₃COOH (H⁺, heat) → acetic anhydride + H₂O.", "Anhydride = two acyl groups joined through one oxygen: R–CO–O–CO–R.", 22], ["How are amides named?", "Similar to carboxylic acids: drop the –oic acid ending and replace it with –amide.", "Examples: propanamide (propionamide), benzamide, cyclopentanecarboxamide, N,N-dimethylcyclohexanecarboxamide.", 23], ["Name the two drugs under 'Some significant examples' and the activities listed there.", "• Aspirin = 2-acetoxybenzoic acid = acetyl salicylic acid\n• Acetaminophen (Tylenol)\n• Analgesics = painkillers\n• Antipyretics = fever reducers", "Both drugs are shown at the end of the lecture under the headings analgesics and antipyretics.", 24], ["Classify CH₃CH₂CONH₂, CH₃CH₂CONHR and CH₃CH₂CONR₂ as amides.", "• CH₃CH₂CONH₂: primary amide (1°)\n• CH₃CH₂CONHR: secondary amide (2°)\n• CH₃CH₂CONR₂: tertiary amide (3°)", "The classification depends on how many R groups are on the nitrogen.", 25]], [["Why is a carboxylic acid (pKa 4–5) much more acidic than an alcohol (pKa about 15–16), yet weaker than HCl?", "• Both ionize to H⁺ and a conjugate base with the negative charge on oxygen\n• The carboxylate electrons are delocalized over both oxygens (resonance), so it is more stable and a weaker base than the localized alkoxide\n• A more stable anion shifts the dissociation equilibrium toward more anion and more H⁺ (higher acidity)\n• Inorganic acids such as HCl have negative pKa, so they are stronger still", "Fig 1 compares the resonance-stabilized carboxylate with the non-stabilized alkoxide.", 26], ["Arrange acetic, chloroacetic, dichloroacetic and trichloroacetic acid from weakest to strongest and give the pKa values. Under which heading does the lecture discuss this?", "• Acetic (4.74) < chloroacetic (2.82) < dichloroacetic (1.30) < trichloroacetic (0.7)\n• Heading: Resonance and Inductive effect", "Ka values in Table 4: 1.75, 136, 5530 and 23200 (all × 10⁻⁵). A lower pKa means a stronger acid.", 27], ["Give the reagents for the sequence propene → propanol → propanal → propionic acid.", "• Propene → propanol: H₂O / H₂O₂\n• Propanol → propanal: PCC (weak oxidant)\n• Propanal → propionic acid: KMnO₄", "PCC stops at the aldehyde; the strong oxidant KMnO₄ completes the oxidation to the acid.", 28], ["After ozonolysis of an alkene, what happens to a ketone product and to an aldehyde product? Which acid does cis-2-butene give?", "• Ketone: no oxidation\n• Aldehyde: oxidation gives the acid\n• cis-2-Butene (1. O₃, 2. H₂O₂) → acetaldehyde → acetic acid", "Only the aldehyde fragments of ozonolysis end up as carboxylic acids.", 29], ["Which of toluene, ethylbenzene, cumene and tert-butylbenzene give benzoic acid with KMnO₄?", "• Toluene, ethylbenzene and cumene → benzoic acid\n• tert-Butylbenzene: NO reaction", "The lecture labels them compounds 1–4: compounds 1, 2 and 3 give benzoic acid, compound 4 does not.", 30], ["Compare what happens to maleic acid, fumaric acid, phthalic acid, isophthalic acid and terephthalic acid on heating.", "• Maleic acid (135 °C) → maleic anhydride + H₂O\n• Fumaric acid (135 °C): no reaction\n• Phthalic acid → phthalic anhydride\n• Isophthalic acid and terephthalic acid: no reaction", "Only maleic acid and phthalic acid form an anhydride in the lecture's examples.", 31], ["Match each reagent with the derivative formed from R–COOH: SOCl₂/base; RCO₂H/heat; R′OH, H⁺/heat; R₂NH/heat; base such as NaOH.", "• SOCl₂, base: acid halide (R–COCl)\n• RCO₂H, heat: acid anhydride\n• R′OH, H⁺/heat: ester (R–COOR′)\n• R₂NH, heat: amide (R–CONR₂)\n• NaOH: acid salt (R–COO⁻ Na⁺) + H₂O", "This is the 'formation of derivatives' scheme of carboxylic acids.", 32], ["Contrast the neutralization reaction and the substitution reaction of carboxylic acids with an example of each.", "• Neutralization: CH₃COOH + NaOH → CH₃COONa + H₂O (acid salt)\n• Substitution: butanoic acid + propanol → propyl butanoate (an ester)", "In the substitution the OR of the alcohol replaces the OH of the acid.", 33], ["Phenyl acetate and methyl benzoate have the R and R′ groups interchanged. Compare their names and b.p, and name the salt shown with them.", "• Phenyl acetate: b.p 195.7 °C\n• Methyl benzoate: b.p 196.8 °C\n• Sodium benzoate: the acid salt", "The lecture notes that the isomeric esters have different names when R and R′ are interchanged.", 34], ["What products does acetyl chloride give with water, ethanol, ammonia and acetic acid?", "• H₂O: acetic acid + HCl\n• EtOH: ethyl acetate + HCl\n• NH₃: acetamide + HCl\n• Acetic acid: acetic anhydride + HCl", "Acid chlorides react rapidly with most nucleophiles such as water, alcohols and ammonia.", 35], ["Compare the b.p of formamide with N,N-dimethylformamide and of acetamide with N,N-dimethylacetamide. Explain.", "• Formamide 210 °C vs N,N-dimethylformamide 153 °C\n• Acetamide 222 °C vs N,N-dimethylacetamide 165 °C\n• Alkyl substitution on N lowers b.p and m.p by decreasing the hydrogen bonding possibilities", "Amides have exceptionally high boiling points for their molecular weight.", 36], ["What products does acetic anhydride give with H₂O, RO–H and NH₃?", "• H₂O: two molecules of acetic acid\n• RO–H: ester + acetic acid\n• NH₃: amide + acetic acid", "This is the nucleophilic substitution of an anhydride; one acid molecule is always released.", 37], ["What do NH₃ (dry ether), LiAlH₄ (ether) and a Grignard reagent (R″MgX) each convert an ester R–COOR′ into?", "• NH₃: amide + R′OH (ammonolysis)\n• LiAlH₄: primary alcohol RCH₂OH + R′OH\n• R″MgX: tert-alcohol", "Example for ammonolysis: methyl benzoate + NH₃ → benzamide + CH₃OH.", 38], ["What do hydrolysis and LiAlH₄ reduction of an amide give, and what does hydrolysis require?", "• Hydrolysis (H₂O, H⁺ or OH⁻): carboxylic acid + NH₃\n• The reaction is slow: prolonged heating or acid or base catalysts is usually necessary\n• LiAlH₄ (ether): amine, RCH₂NH₂", "The lecture calls the LiAlH₄ reduction an excellent way to make primary amines.", 39], ["Analyze the name isopropyl 4-hydroxy-3,5-dimethylhexanoate using the lecture's rule for naming esters.", "• Isopropyl: the R part of the OR group, named first\n• Hexanoate: the acid name hexanoic acid with –ic changed to –ate\n• 4-Hydroxy and 3,5-dimethyl: substituents on the hexanoate chain", "Other examples in the lecture: ethyl 2-chloro-3-oxobutanoate, methyl 2-butenoate, phenyl 3-oxobutanoate, ethyl 2-pentynoate, dimethyl malonate.", 40]], [["Outline both lecture methods for making benzoic acid from benzene. Which intermediate is oxidized in method 1 and which is carboxylated in method 2?", "• Method 1: benzene + CH₃Cl/AlCl₃ → toluene → KMnO₄ → benzoic acid (oxidation of the aliphatic chain)\n• Method 2: benzene + Cl₂/FeCl₃ → chlorobenzene → Mg → PhMgCl (Grignard reagent) → 1. CO₂, 2. H⁺ → benzoic acid", "Method 1 would give no reaction if the alkyl group were tert-butyl (tert-butylbenzene).", 41], ["Starting from 1-chloropropane, show two routes to the same carboxylic acid. Which reagent supplies the extra carbon in each?", "• Route 1: CN⁻ → CH₃CH₂CH₂CN → H₃O⁺ (or NaOH / H⁺) hydrolysis → CH₃CH₂CH₂COOH (carbon from CN⁻)\n• Route 2: Mg → CH₃CH₂CH₂MgCl → 1. CO₂, 2. H⁺ → CH₃CH₂CH₂COOH (carbon from CO₂)", "Both routes convert a three-carbon alkyl chloride into the four-carbon acid CH₃CH₂CH₂COOH (butanoic acid in Table 1).", 42], ["Describe how acetic benzoic anhydride (a mixed anhydride) is prepared and identify the nucleophile and the electrophile.", "• Acetic acid + NaOH → acetate anion\n• Benzoic acid + PCl₃ → benzoyl chloride\n• Acetate (nucleophile) attacks benzoyl chloride (electrophile, Cl leaves) → acetic benzoic anhydride", "Two different acyl groups are joined through one oxygen: CH₃–CO–O–CO–C₆H₅.", 43], ["Salicylic acid reacts with acetic anhydride. Name the product and classify the reaction.", "• Product: 2-acetoxybenzoic acid = acetyl salicylic acid = Aspirin\n• Nucleophilic substitution of an anhydride: the OH group (like RO–H) gives an ester, with acetic acid as the other product", "Salicylic acid is 2-hydroxybenzoic acid; the product still carries its COOH group.", 44], ["Compare the products of LiAlH₄ with a carboxylic acid, an ester and an amide. What does oxalic acid give and what does it show?", "• Carboxylic acid: primary alcohol\n• Ester: primary alcohol + R′OH\n• Amide: amine (RCH₂NH₂)\n• Oxalic acid → ethylene glycol, showing that both carbonyl groups are reduced", "The acid intermediate path: aldehyde → alkoxide anion → protonation to the primary alcohol.", 45], ["How does nylon connect adipic acid, the diacid chloride and amide chemistry? Why are the bonds in nylon unreactive?", "• Adipic acid (hexanedioic acid) is used to manufacture nylon\n• Adipoyl chloride (diacid chloride) + hexamethylene diamine → polyamide nylon\n• Units are joined by amide bonds\n• The amide is not reactive because of resonance (carbonyl + amine)", "This is why amide hydrolysis needs prolonged heating or acid or base catalysts.", 46], ["Rank ethanol, acetic acid, trichloroacetic acid and HCl from weakest to strongest acid and justify.", "• Ethanol (pKa about 15–16) < acetic acid (4.74) < trichloroacetic acid (0.7) < HCl (negative pKa)\n• Carboxylate is resonance-stabilized, so acetic acid is stronger than ethanol\n• Trichloroacetic acid is stronger than di- and chloroacetic acid\n• Inorganic acids have negative pKa", "A lower pKa means a stronger acid.", 47], ["Compare acetyl chloride + NH₃ with acetic anhydride + NH₃. How else can an amide be prepared from the lecture?", "• Acetyl chloride + NH₃ → acetamide + HCl\n• Acetic anhydride + NH₃ → acetamide + acetic acid\n• Also: carboxylic acid + NH₃ with heat\n• Also: acid chloride (e.g., benzoyl chloride) + NH₃ with heat → benzamide", "The product amide is the same; the by-product (HCl vs acetic acid) differs.", 48], ["Match each starting material with the lecture reagents that give R–COOH: alkene, R–X, R–C≡N, R–CH₂OH, Ar–CHR₂. Which alkene fragment does not become an acid?", "• Alkene: O₃ (ozonolysis), then H₂O₂\n• R–X: Mg → RMgX, 1. CO₂, 2. H₃O⁺\n• R–C≡N: H₃O⁺, heat\n• R–CH₂OH: strong oxidant (KMnO₄); weak oxidant (PCC) → aldehyde → oxidation\n• Ar–CHR₂: oxidation → Ar–COOH\n• A ketone fragment from ozonolysis: no oxidation", "Only aldehyde fragments can be oxidized further to the acid.", 49], ["Give two routes from acetic acid to acetic anhydride, stating what is lost in each.", "• Route 1: 2 CH₃COOH (H⁺, heat) → acetic anhydride + H₂O\n• Route 2: CH₃COOH + PCl₅ → acetyl chloride; then acetyl chloride + acetic acid → acetic anhydride + HCl", "In both routes two acetyl units are joined through one oxygen.", 50]]];
+// MCQ bank: [question, [A,B,C,D], correct index, explanation]
+const Q=[[["What is the general formula of an ester?", ["R–CONH₂", "R–COX", "R–COOR′", "R–CO–O–CO–R"], 2, "Esters are derived from acids by replacing the OH group with an OR group, giving R–COOR′."], ["What is the IUPAC name of formic acid (HCOOH)?", ["Ethanoic acid", "Propanoic acid", "Butanoic acid", "Methanoic acid"], 3, "Table 1 lists the one-carbon acid HCOOH as formic acid, with IUPAC name methanoic acid."], ["What is the common name of CH₃CH₂CH₂COOH (butanoic acid)?", ["Propionic acid", "Valeric acid", "Caproic acid", "Butyric acid"], 3, "In Table 1, the four-carbon acid has the common name butyric acid and the IUPAC name butanoic acid."], ["Which common name corresponds to the five-carbon acid pentanoic acid?", ["Caproic acid", "Valeric acid", "Butyric acid", "Propionic acid"], 1, "Table 1: pentanoic acid (5 carbons) = valeric acid; hexanoic acid (6 carbons) = caproic acid."], ["Which suffix is given to aliphatic dicarboxylic acids in the IUPAC system?", ["–oic acid", "–oate", "–dioic acid", "–amide"], 2, "The lecture states that an aliphatic dicarboxylic acid is given the suffix –dioic acid, e.g. ethanedioic acid."], ["Which common name belongs to HOOC–COOH (ethanedioic acid)?", ["Malonic acid", "Oxalic acid", "Succinic acid", "Adipic acid"], 1, "Table 2: ethanedioic acid = oxalic acid; propanedioic = malonic; butanedioic = succinic; hexanedioic = adipic."], ["Which dicarboxylic acid is described as the most important commercial compound of the group and is used to manufacture nylon?", ["Succinic acid", "Adipic acid", "Glutaric acid", "Pimelic acid"], 1, "The lecture states that adipic acid (hexanedioic acid) is the most important commercial diacid and is used in nylon manufacture."], ["The two butenedioic acids (maleic and fumaric) played a historic role in the discovery of:", ["Resonance stabilization", "Ozonolysis", "Acid halide formation", "Cis–trans isomerism"], 3, "The lecture notes that the two butenedioic acids played a historic role in the discovery of cis–trans isomerism."], ["Which acid is cis-2-butenedioic acid?", ["Maleic acid", "Fumaric acid", "Phthalic acid", "Malonic acid"], 0, "Maleic acid is cis-2-butenedioic acid, whereas fumaric acid is trans-2-butenedioic acid."], ["Which of the following is NOT one of the three benzene dicarboxylic acids in the lecture?", ["Adipic acid", "Phthalic acid", "Isophthalic acid", "Terephthalic acid"], 0, "The three benzene dicarboxylic acids are phthalic, isophthalic and terephthalic acid; adipic acid is an aliphatic diacid."], ["According to Table 3, which acid has a limited water solubility of 3.7 g/100 g H₂O at 25 °C?", ["Butanoic acid", "Propanoic acid", "Acetic acid", "Pentanoic acid"], 3, "Formic, acetic, propanoic and butanoic acids are infinitely soluble; pentanoic acid is 3.7 and hexanoic acid is 1.0 g/100 g H₂O."], ["Carboxylic acids typically have pKa values in the range of:", ["15 to 16", "Negative values", "4 to 5", "0.5 to 1"], 2, "The lecture states that carboxylic acids typically have pKa values of 4 to 5."], ["Inorganic acids such as HCl have pKa values that are:", ["Negative", "About 4 to 5", "About 15 to 16", "Exactly 7"], 0, "Aqueous carboxylic acids are much weaker than inorganic acids such as HCl, which have negative pKa values."], ["Which reagent reduces carboxylic acids to primary alcohols?", ["PCC", "KMnO₄", "SOCl₂", "LAH"], 3, "The lecture shows acids reduced to alcohols by LAH (e.g. acetic acid → ethanol, a primary alcohol)."], ["Which reagent converts a carboxylic acid into an acid halide (with base)?", ["NaOH", "SOCl₂", "R′OH / H⁺", "R₂NH"], 1, "In the derivatives scheme, R–COOH + SOCl₂ (base) gives the acid halide."], ["Reaction of CH₃COOH with NaOH is described in the lecture as a:", ["Neutralization reaction giving CH₃COONa + H₂O", "Substitution reaction giving an ester", "Reduction reaction giving an alcohol", "Hydrolysis reaction giving an amide"], 0, "Acid + base gives an acid salt + H₂O; the lecture labels this a neutralization reaction."], ["What is the name of CH₃–CO–OCH₃?", ["Ethyl acetate (ethyl ethanoate)", "Methyl acetate (methyl ethanoate)", "Methyl butyrate (methyl butanoate)", "Methyl benzoate"], 1, "The lecture gives CH₃COOCH₃ as methyl acetate (methyl ethanoate), b.p. 57 °C."], ["What are lactones?", ["Cyclic amides", "Cyclic anhydrides", "Cyclic esters", "Cyclic acid halides"], 2, "The lecture heads this topic 'Lactones (Cyclic Esters)'."], ["What is a lactam?", ["A cyclic ester", "A cyclic acid halide", "A cyclic amide", "A cyclic carboxylate salt"], 2, "The lecture states: 'Lactam is cyclic amide'."], ["According to the 'Smelly Stuff' section, which ester is associated with the smell of pineapples?", ["Methyl butanoate", "Pentyl butanoate", "O-methyl butanethioate", "Ethyl butanoate"], 3, "Methyl butanoate = apple; O-methyl butanethioate = strawberries; ethyl butanoate = pineapples; pentyl butanoate = apricots."], ["Benzoyl chloride is described in the lecture as a:", ["Lachrymator (tear gas)", "Polymer precursor for nylon", "Fruity-smelling ester", "Painkiller"], 0, "The lecture notes that acyl halides have irritating odors and that benzoyl chloride is a lachrymator (tear gas)."], ["Acid anhydrides are formed from:", ["An acid and ammonia with loss of HCl", "An acid and an alcohol with loss of CO₂", "An ester and a Grignard reagent", "The combination of two acids with loss of water"], 3, "The lecture states that acid anhydrides are formed from the combination of two acids and the loss of water."], ["What is the IUPAC name given in the lecture for aspirin?", ["2-Acetoxybenzoic acid", "2-Hydroxybenzoic acid", "Acetamide", "Benzoic anhydride"], 0, "Aspirin = 2-acetoxybenzoic acid = acetyl salicylic acid; salicylic acid is 2-hydroxybenzoic acid."], ["How are amides named relative to the parent carboxylic acid?", ["The –ic ending is changed to –ate", "The –oic acid ending is replaced with –yl chloride", "The –oic acid ending is dropped and replaced with –amide", "The suffix –dioic acid is added"], 2, "Amide nomenclature is similar to carboxylic acids: drop the –oic acid ending and replace it with amid(e)."], ["Aspirin and acetaminophen (Tylenol) are given in the lecture as examples of:", ["Lactones and lactams", "Acid halides and anhydrides", "Polymers and monomers", "Analgesics and antipyretics"], 3, "The 'Some significant examples' section lists analgesics – painkillers and antipyretics – fever reducers, illustrated by aspirin and acetaminophen."]], [["Going from formic acid to hexanoic acid in Table 3, which trend is observed?", ["Boiling point decreases, and solubility stays infinite", "Boiling point increases, and solubility becomes limited after butanoic acid", "Boiling point increases, and solubility stays infinite", "Boiling point stays constant, and solubility decreases from the start"], 1, "b.p. rises from 100.5 °C (formic) to 205 °C (hexanoic), while solubility is infinite only up to butanoic acid, then 3.7 and 1.0 g/100 g H₂O."], ["Why is the carboxylate anion more stable than the alkoxide anion?", ["Its charge is delocalized over both oxygen atoms", "Its negative charge is localized on one oxygen atom", "It cannot ionize to give a proton at all", "It contains fewer oxygen atoms than the alkoxide"], 0, "Delocalization increases stability, so the acid equilibrium shifts toward more anion and higher H⁺ concentration; the alkoxide is localized (not resonance stabilized)."], ["Which list arranges the acids from strongest to weakest according to Table 4?", ["Acetic > chloroacetic > dichloroacetic > trichloroacetic", "Dichloroacetic > trichloroacetic > acetic > chloroacetic", "Trichloroacetic > dichloroacetic > chloroacetic > acetic", "Chloroacetic > trichloroacetic > dichloroacetic > acetic"], 2, "pKa values: trichloroacetic 0.7, dichloroacetic 1.30, chloroacetic 2.82, acetic 4.74. A lower pKa means a stronger acid."], ["Butanoic acid reacts with propanol under the conditions of the substitution reaction in the lecture. What is the product?", ["Propyl butanoate", "Butyl propanoate", "Propyl propanoate", "Butyl butanoate"], 0, "The OH of the acid is replaced by the OR group; the R part of OR (propyl) is named first, then the acid name with –ic changed to –ate: propyl butanoate."], ["Toluene, ethylbenzene, cumene and tert-butylbenzene are each treated with KMnO₄. Which one gives NO reaction?", ["Toluene", "tert-Butylbenzene", "Ethylbenzene", "Cumene"], 1, "Compounds 1, 2 and 3 (toluene, ethylbenzene, cumene) give benzoic acid with KMnO₄, while compound 4 (tert-butylbenzene) shows no reaction."], ["Which route correctly converts 1-chloropropane into butanoic acid?", ["Either Mg then KMnO₄ oxidation, or CN⁻ then PCC oxidation", "Either CO₂ then Mg addition, or H₃O⁺ then CN⁻ addition", "Either CN⁻ then H₃O⁺ (hydrolysis), or Mg then CO₂ then H⁺", "Either LAH then H⁺ reduction, or SOCl₂ then NH₃ addition"], 2, "1-Chloropropane → CH₃CH₂CH₂CN → hydrolysis gives the acid; or Mg → CH₃CH₂CH₂MgCl → 1. CO₂, 2. H⁺ gives the acid."], ["How does oxidation of a primary alcohol (RCH₂OH) with PCC differ from oxidation with KMnO₄?", ["PCC (weak) gives the aldehyde, while KMnO₄ (strong) gives the acid", "PCC gives the carboxylic acid, while KMnO₄ gives the aldehyde", "Both reagents stop at the aldehyde stage in every case", "Both reagents give the ketone from the primary alcohol"], 0, "The lecture shows weak oxidation (PCC) stopping at RCHO, and strong oxidation (KMnO₄) giving the acid; e.g. propanol → propanal → propionic acid."], ["What is the product of reducing oxalic acid with LAH followed by H⁺?", ["Ethanol", "Formic acid", "Acetaldehyde", "Ethylene glycol"], 3, "Both carbonyl (COOH) groups are reduced, so HOOC–COOH gives HOCH₂CH₂OH, ethylene glycol."], ["Phenyl acetate and methyl benzoate are an isomeric pair of esters. What distinguishes them?", ["One is an acid and the other is an amide", "One is a salt and the other is an anhydride", "They differ only in the number of carbonyl groups", "The R and R′ groups are interchanged"], 3, "The lecture notes the different names of a pair of isomeric esters where R and R′ are interchanged: phenyl acetate (b.p. 195.7 °C) and methyl benzoate (b.p. 196.8 °C)."], ["Why is N,N-dimethylacetamide (b.p. 165 °C) lower boiling than acetamide (b.p. 222 °C)?", ["Alkyl groups on nitrogen reduce hydrogen-bonding possibilities", "Alkyl substitution on nitrogen increases hydrogen bonding", "N,N-Dimethylacetamide simply has a lower molecular weight", "Acetamide is a tertiary amide and the other is primary"], 0, "Amides have exceptionally high boiling points, but alkyl substitution on N lowers the boiling and melting points by decreasing hydrogen-bonding possibilities."], ["Why is an amide described as unreactive?", ["Resonance between the carbonyl and the nitrogen lone pair", "The carbonyl group is absent from its structure", "The nitrogen has no lone pair available at all", "It is derived from a primary alcohol by oxidation"], 0, "The lecture states 'The amide is not reactive and that is because the resonance' (structures A ↔ B involving the carbonyl and amine parts)."], ["Which pair of monomers gives nylon, a polyamide?", ["Adipic acid and ethylene glycol", "Adipoyl chloride and hexamethylene diamine", "Phthalic acid and methanol", "Acetyl chloride and ammonia"], 1, "A diamine plus a diacid chloride produces a polymer with amide bonds; nylon is formed from adipoyl chloride and hexamethylene diamine."], ["Acetyl chloride reacts with acetic acid. What are the products?", ["Acetic anhydride + HCl", "Ethyl acetate + HCl", "Acetamide + HCl", "Acetic acid + HCl"], 0, "Acetyl chloride + H₂O → acetic acid; + EtOH → ethyl acetate; + NH₃ → acetamide; + CH₃COOH → acetic anhydride (each with HCl)."], ["Which diacids form a cyclic anhydride when heated?", ["Fumaric acid and isophthalic acid", "Maleic acid (135 °C) and phthalic acid", "Isophthalic acid and terephthalic acid", "Fumaric acid and terephthalic acid"], 1, "Maleic acid → maleic anhydride + H₂O at 135 °C and phthalic acid → phthalic anhydride; fumaric, isophthalic and terephthalic acids show no reaction."], ["Which statement correctly compares LiAlH₄ reduction of an amide and of an ester?", ["The amide gives a primary alcohol; the ester gives an amine", "Both give a tertiary alcohol with LiAlH₄ in ether", "The amide gives an amine (RCH₂NH₂); the ester gives a primary alcohol", "Neither of them is reduced by LiAlH₄ in ether"], 2, "RCONH₂ + LiAlH₄/ether → RCH₂NH₂; RCOOR′ + LiAlH₄/ether → RCH₂OH + R′OH."]], [["Which sequence converts benzene to benzoic acid through the Grignard method shown in the lecture?", ["CH₃Cl/AlCl₃, then Mg, then H⁺", "Cl₂/FeCl₃, then Mg, then CO₂, then H⁺", "Mg, then Cl₂/FeCl₃, then CO₂", "Cl₂/FeCl₃, then KMnO₄, then H⁺"], 1, "Benzene → chlorobenzene (Cl₂, FeCl₃) → phenylmagnesium chloride (Mg) → 1. CO₂, 2. H⁺ → benzoic acid. The other method uses CH₃Cl/AlCl₃ then KMnO₄."], ["Propene is converted to propionic acid by the lecture's sequence. Which intermediates form, in order?", ["Propanal, then propanol", "Propanol, then propanone", "Propanol, then propanal", "Propanal, then propanoyl chloride"], 2, "Propene + H₂O/H₂O₂ → propanol; PCC → propanal; KMnO₄ → propionic acid."], ["Which order of boiling points (highest to lowest) matches the amides in the lecture?", ["Formamide > acetamide > N,N-dimethylformamide > N,N-dimethylacetamide", "N,N-Dimethylacetamide > N,N-dimethylformamide > acetamide > formamide", "Acetamide > N,N-dimethylacetamide > formamide > N,N-dimethylformamide", "Acetamide > formamide > N,N-dimethylacetamide > N,N-dimethylformamide"], 3, "b.p.: acetamide 222 °C, formamide 210 °C, N,N-dimethylacetamide 165 °C, N,N-dimethylformamide 153 °C."], ["In the synthesis of aspirin from salicylic acid and acetic anhydride, what is the result?", ["The COOH becomes an amide while the OH remains unchanged", "The phenolic OH becomes an acetoxy ester; COOH remains", "Both the OH and the COOH are converted to acid chlorides", "The aromatic ring is reduced to a primary alcohol"], 1, "Salicylic acid (2-hydroxybenzoic acid) + acetic anhydride → 2-acetoxybenzoic acid (acetyl salicylic acid, aspirin), which keeps COOH and has an acetoxy ester group."], ["In the preparation of acetic benzoic anhydride, which steps are used?", ["Benzoate attacks acetyl chloride made from SOCl₂ and NaOH", "Acetate (from acetic acid + NaOH) attacks benzoyl chloride (from PCl₃)", "Acetic acid and benzoic acid are reduced together with LAH", "Benzoyl chloride is hydrolyzed by water to the mixed anhydride"], 1, "CH₃COOH + NaOH → CH₃COO⁻; benzoic acid + PCl₃ → benzoyl chloride; acetate displaces Cl⁻ to give the mixed anhydride, acetic benzoic anhydride."], ["Which list correctly arranges these acids from weakest to strongest using Table 4?", ["Formic < acetic < butyric < propionic < trichloroacetic", "Trichloroacetic < formic < acetic < butyric < propionic", "Propionic < butyric < acetic < formic < trichloroacetic", "Butyric < propionic < acetic < trichloroacetic < formic"], 2, "pKa values: propionic 4.85, butyric 4.80, acetic 4.74, formic 3.68, trichloroacetic 0.7. Higher pKa means weaker acid."], ["Which pairing of starting group and product is correct for the intramolecular ring-forming reactions shown in the lecture?", ["γ-OH acid → γ-lactone (cyclic ester); γ-NH₂ acid → γ-lactam (cyclic amide)", "γ-OH acid → γ-lactam (cyclic amide); γ-NH₂ acid → γ-lactone (cyclic ester)", "γ-OH acid → β-lactam (cyclic amide); γ-NH₂ acid → β-lactone (cyclic ester)", "Both γ-OH and γ-NH₂ acids give γ-lactones (cyclic esters)"], 0, "The hydroxy acid cyclizes through the O atom to a cyclic ester (lactone), and the amino acid through the N atom to a cyclic amide (lactam); the Greek letter (γ or β) indicates the ring position."], ["Which set correctly matches reagents with the products from RCOOR′?", ["LiAlH₄ → tertiary alcohol; R″MgX → primary alcohol; NH₃ → acid halide", "LiAlH₄ → amide; R″MgX → primary alcohol; NH₃ → tertiary alcohol", "LiAlH₄ → amine; R″MgX → amide; NH₃ → primary alcohol", "LiAlH₄ → primary alcohol; R″MgX → tertiary alcohol; NH₃ → amide + R′OH"], 3, "Reduction of esters gives primary alcohols, Grignard reagents give tert-alcohols, and ammonolysis converts esters to amides."], ["Acetyl chloride and acetic anhydride each react with NH₃ to give acetamide. What is the second product in each case?", ["Acetic acid from acetyl chloride, and HCl from acetic anhydride", "HCl from both", "HCl from acetyl chloride, and acetic acid from acetic anhydride", "Water from both"], 2, "Acetyl chloride + NH₃ → acetamide + HCl; acetic anhydride + NH₃ → amide + acetic acid (the lecture's nucleophilic substitution of anhydride)."], ["An alkene gives an aldehyde fragment and a ketone fragment upon ozonolysis. What is obtained after the oxidation step?", ["Two carboxylic acids", "A carboxylic acid from the aldehyde fragment, while the ketone remains unchanged", "Two ketones", "A carboxylic acid from the ketone fragment, while the aldehyde remains unchanged"], 1, "The lecture shows alkene → ozonolysis → aldehyde → oxidation → acid, whereas the ketone undergoes no oxidation."]]];
+// level boxes
+function lvBuild(el,data,cb){const w=$(el);w.innerHTML="";LV.forEach((l,i)=>{const b=E("button","lvb"+(i==0?" on":""),"<b>"+l[0]+"</b><span>"+l[1]+" · "+data[i].length+"</span>");b.onclick=()=>{w.querySelectorAll(".lvb").forEach(x=>x.classList.remove("on"));b.classList.add("on");cb(i)};w.append(b)})}
+// flash cards
+let fd=F[0].slice(),fi=0,fL=0;
+function fr(){const c=fd[fi];$("#fc").classList.remove("f");$("#fq").textContent=c[0];const b=$("#fans");b.innerHTML="";const k=(t,x,cl)=>{b.append(E("div","tg",t));const d=E("div",cl,"");d.textContent=x;b.append(d)};k("Back",c[1],"bt");k("Explanation",c[2],"bt ex");$("#fn").textContent=LV[fL][0]+" · "+LV[fL][1]+" · Card "+String(c[3]).padStart(2,"0")+" ("+(fi+1)+" of "+fd.length+")"}
+const fl=()=>$("#fc").classList.toggle("f");
+$("#fc").onclick=fl;$("#ff").onclick=fl;$("#fc").onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();fl()}};
+$("#fx").onclick=()=>{fi=(fi+1)%fd.length;fr()};$("#fp").onclick=()=>{fi=(fi-1+fd.length)%fd.length;fr()};$("#fs").onclick=()=>{fd=sh(fd);fi=0;fr()};
+lvBuild("#fl",F,i=>{fL=i;fd=F[i].slice();fi=0;fr()});fr();
+// quiz
+let qi,qs,qo,qL=0;
+function qstart(){qo=sh(Q[qL]);qi=0;qs=0;qshow()}
+function qshow(){const z=$("#qz");z.innerHTML="";if(qi>=qo.length){z.innerHTML="<div class='card'><h3>"+LV[qL][0]+" score: "+qs+" / "+qo.length+"</h3><p>"+Math.round(qs/qo.length*100)+"% correct.</p></div>";const b=E("button","btn","Try again");b.onclick=qstart;z.append(b);return}
+const [q,opts,ci,ex]=qo[qi];z.append(E("div","prog","<i style='width:"+qi/qo.length*100+"%'></i>"));
+const card=E("div","card","<small>"+LV[qL][0]+" · Difficulty: "+LV[qL][1]+" · Question "+(qi+1)+" of "+qo.length+" · Score "+qs+"</small>");
+card.append(E("h3","",""));card.lastChild.textContent=q;
+const nx=E("button","btn",qi==qo.length-1?"See score":"Next question");nx.style.display="none";nx.onclick=()=>{qi++;qshow()};
+const bs=[];opts.forEach((o,i)=>{const b=E("button","opt","");b.textContent=o;bs.push(b);b.onclick=()=>{if(card.dataset.d)return;card.dataset.d=1;if(i==ci){qs++;b.classList.add("ok")}else{b.classList.add("no");bs[ci].classList.add("ok")}
+const n=E("div","note","");n.innerHTML="<b>Correct answer: "+"ABCD"[ci]+") </b>";n.append(document.createTextNode(opts[ci]));n.append(E("br"));n.append(document.createTextNode("Explanation: "+ex));card.insertBefore(n,nx);nx.style.display="inline-block"};card.append(b)});
+card.append(nx);z.append(card)}
+lvBuild("#ql",Q,i=>{qL=i;qstart()});qstart();
+// ===== Chemical Structures (from lecture) =====
+(function(){
+const sub=t=>t.replace(/(\d)/g,'<tspan dy="3" font-size="9">$1</tspan><tspan dy="-3"> </tspan>');
+function draw(w,h,A,B,T){let s='<svg viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" style="max-width:100%;height:auto;color:var(--ink)">';
+ B.forEach(([a,b,n])=>{const[x1,y1,l1]=A[a],[x2,y2,l2]=A[b];const dx=x2-x1,dy=y2-y1,d=Math.hypot(dx,dy),ux=dx/d,uy=dy/d;
+  const sa=l1?Math.min(15,l1.replace(/\d/g,'').length*3.6+6):0,sb=l2?Math.min(15,l2.replace(/\d/g,'').length*3.6+6):0;
+  const o=n==3?[-4,0,4]:n==2?[-2.4,2.4]:[0];o.forEach(k=>{const nx=-uy*k,ny=ux*k;
+   s+='<line x1="'+(x1+ux*sa+nx)+'" y1="'+(y1+uy*sa+ny)+'" x2="'+(x2-ux*sb+nx)+'" y2="'+(y2-uy*sb+ny)+'" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'})});
+ Object.values(A).forEach(([x,y,l])=>{if(l)s+='<text x="'+x+'" y="'+(y+4.5)+'" text-anchor="middle" font-size="13" font-family="system-ui,sans-serif" fill="currentColor">'+sub(l)+'</text>'});
+ (T||[]).forEach(([x,y,t])=>s+='<text x="'+x+'" y="'+(y+4)+'" text-anchor="middle" font-size="12" font-style="italic" fill="var(--s)">'+t+'</text>');
+ return s+'</svg>'}
+function ring(A,B,p,cx,cy,r,n,st,dbl,lab){for(let i=0;i<n;i++){const a=(st+360/n*i)*Math.PI/180;A[p+i]=[cx+r*Math.cos(a),cy+r*Math.sin(a),lab&&lab[i]]}
+ for(let i=0;i<n;i++)B.push([p+i,p+(i+1)%n,dbl&&i%2==0?2:1])}
+const out=(A,k,d,l)=>{const[x,y]=A[k],L=Math.hypot(x-A.cx[0],y-A.cx[1]);return[x+(x-A.cx[0])/L*d,y+(y-A.cx[1])/L*d,l]};
+const items=[];const add=(g,t,w,h,A,B,T)=>items.push([g,t,draw(w,h,A,B,T)]);
+// general formulas
+[["Carboxylic acid","OH"],["Ester","O–R′"],["Amide","NH2"],["Acid halide (X = Cl, Br)","X"]].forEach(([t,y])=>add("Carbonyl families",t,120,95,{C:[60,52],O:[60,22,"O"],R:[30,70,"R"],Y:[92,70,y]},[["C","O",2],["C","R",1],["C","Y",1]]));
+add("Carbonyl families","Acid anhydride",130,95,{C:[38,52],O:[38,22,"O"],R:[10,70,"R"],B:[65,70,"O"],D:[92,52],P:[92,22,"O"],S:[120,70,"R"]},[["C","O",2],["C","R",1],["C","B",1],["B","D",1],["D","P",2],["D","S",1]]);
+// di-acids
+add("Di-acids","Maleic acid (cis-2-butenedioic)",140,100,{a:[52,55],b:[88,55],c:[40,28,"HOOC"],d:[100,28,"COOH"],e:[40,82,"H"],f:[100,82,"H"]},[["a","b",2],["a","c",1],["b","d",1],["a","e",1],["b","f",1]]);
+add("Di-acids","Fumaric acid (trans-2-butenedioic)",140,100,{a:[52,55],b:[88,55],c:[40,28,"HOOC"],d:[100,82,"COOH"],e:[40,82,"H"],f:[100,28,"H"]},[["a","b",2],["a","c",1],["b","d",1],["a","e",1],["b","f",1]]);
+[["Phthalic acid",[0,1]],["Isophthalic acid",[0,2]],["Terephthalic acid",[0,3]]].forEach(([t,v])=>{const A={cx:[70,62]},B=[];ring(A,B,"v",70,62,26,6,-90,1);v.forEach(i=>{A["s"+i]=out(A,"v"+i,23,"COOH");B.push(["v"+i,"s"+i,1])});add("Di-acids",t,140,125,A,B)});
+// drugs
+{const A={cx:[70,92]},B=[];ring(A,B,"v",70,92,24,6,-90,1);A.o=[70,46,"O"];A.c=[94,32];A.p=[94,10,"O"];A.m=[120,44,"CH3"];A.h=[30,70,"COOH"];
+ B.push(["v0","o",1],["o","c",1],["c","p",2],["c","m",1],["v5","h",1]);add("Examples","Aspirin (2-acetoxybenzoic acid)",160,150,A,B)}
+{const A={cx:[60,70]},B=[];ring(A,B,"v",60,70,24,6,0,1);A.n=[107,70,"NH"];A.c=[130,58];A.o=[130,34,"O"];A.m=[153,70,"CH3"];A.h=[13,70,"OH"];
+ B.push(["v0","n",1],["n","c",1],["c","o",2],["c","m",1],["v3","h",1]);add("Examples","Acetaminophen (Tylenol)",175,110,A,B)}
+// lactones / lactams
+[["γ-Lactone","O",5,["γ"]],["β-Lactone","O",4],["γ-Lactam","NH",5],["β-Lactam","NH",4]].forEach(([t,h,n])=>{const A={},B=[],lab=[];lab[n-1]=h;ring(A,B,"v",60,66,n==5?26:24,n,-90,0,lab);
+ A.k=[60,66-(n==5?26:24)-24,"O"];B.push(["v0","k",2]);const T=[];const nm=["α","β","γ"];for(let i=1;i<n-1;i++){const[x,y]=A["v"+i];T.push([x+(x-60)*.5+(x>60?8:-8),y+(y-66)*.3,nm[i-1]])}
+ add("Cyclic derivatives",t,120,110,A,B,T)});
+// amide classes
+[["1° amide","H","H"],["2° amide","R","H"],["3° amide","R","R"]].forEach(([t,a,b])=>add("Amides",t,140,105,{C:[55,52],O:[55,22,"O"],R:[27,70,"R"],N:[84,70,"N"],a:[112,52,a],b:[84,98,b]},[["C","O",2],["C","R",1],["C","N",1],["N","a",1],["N","b",1]]));
+const host=document.getElementById("s1"),box=E("div","");box.innerHTML="<h2 style='margin-top:28px'>Chemical Structures</h2><p class='src'>Structures shown in the lecture (generic formulas, di-acids, drugs, cyclic derivatives, amide classes).</p>";
+let cur="",grid;items.forEach(([g,t,svg])=>{if(g!=cur){cur=g;box.append(E("h3","",g));box.lastChild.style.cssText="color:var(--p);margin:18px 0 8px;font:700 1.1rem Georgia,serif";grid=E("div","");grid.style.cssText="display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))";box.append(grid)}
+ const c=E("div","card","<div style='text-align:center'>"+svg+"</div><p class='src' style='text-align:center;margin:6px 0 0'><b>"+t+"</b></p>");c.style.margin="0";grid.append(c)});
+host.append(box)})();
+</script></body></html>
